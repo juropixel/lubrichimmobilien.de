@@ -183,9 +183,20 @@
       const bp = pos(kontaktBand), hp = pos($('h2', kontaktBand));
       const yb = hp.y - 16, xl = hp.x;
 
+      // Mobil stehen Einleitung (mit Knopf) und Schritte untereinander:
+      // dann zuerst an den Rand, an der Einleitung vorbei, und erst kurz vor Schritt 1 einbiegen.
+      const ip = pos($('.ablauf__intro'));
+      const untereinander = ip.y + ip.h < y1 - 10;
+      const zumErstenSchritt = untereinander
+        ? [
+          `C${sx} ${sy + 40} ${randX} ${sy + 20} ${randX} ${Math.max(sy + 50, ip.y - 10)}`,
+          `L${randX} ${y1 - 70}`,
+          `C${randX} ${y1 - 30} ${ax} ${y1 - 45} ${ax} ${y1}`
+        ]
+        : [`C${sx} ${sy + 120} ${ax} ${y1 - 150} ${ax} ${y1}`];
       const d = [
         `M${sx} ${sy}`,
-        `C${sx} ${sy + 120} ${ax} ${y1 - 150} ${ax} ${y1}`,
+        ...zumErstenSchritt,
         `L${ax} ${yN}`,
         `C${ax} ${yN + 160} ${randX} ${yN + 80} ${randX} ${yN + 260}`,
         `L${randX} ${yb - 26}`
