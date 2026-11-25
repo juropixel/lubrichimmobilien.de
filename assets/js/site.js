@@ -154,7 +154,9 @@
     svg.append(linie, dach, spitze);
     main.appendChild(svg);
     const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let proben = [], laenge = 0, dachLaenge = 0, dachStart = 0, kreise = [], bereit = false;
+    document.body.classList.add('faden-an');
+    // Wegabschnitte: Länge am Ende jedes Abschnitts und die Scroll-Zielhöhe, bei der er fertig gezeichnet ist
+    let abschnitte = [], laenge = 0, dachLaenge = 0, dachStart = 0, ankerListe = [], bereit = false;
 
     const messen = () => {
       const mr = main.getBoundingClientRect();
@@ -165,80 +167,123 @@
 
       const rahmen = $('.ablauf');
       const rp = pos(rahmen);
-      const innenLinks = rp.x + parseFloat(getComputedStyle(rahmen).paddingLeft);
-      const randX = Math.max(10, innenLinks - 40);
+      const pad = parseFloat(getComputedStyle(rahmen).paddingLeft);
+      const randL = Math.max(10, rp.x + pad - 40);
+      const randR = Math.min(W - 10, rp.x + rp.w - pad + 40);
 
-      // Start: unter dem Kamin der obersten Karte, unterhalb der Steuerung
-      // offsetLeft/-Width ignorieren Transformationen (Karten können gerade animiert werden)
+      // Start: unter dem Kamin der obersten Karte (offsetLeft/-Width ignorieren laufende Animationen)
       const karte = $('.giebelkarte');
       const liste = $('.stapel__karten');
       const steuer = $('.stapel__steuerung');
       const sp = steuer ? pos(steuer) : pos($('.start-buehne'));
-      const sx = karte && liste ? pos(liste).x + karte.offsetLeft + karte.offsetWidth * 0.6575 : randX;
+      const sx = karte && liste ? pos(liste).x + karte.offsetLeft + karte.offsetWidth * 0.6575 : randL;
       const sy = sp.y + sp.h + 22;
 
-      kreise = ablaufSchritte.map((li) => { const p = pos(li); return { li, x: p.x + 24, y: p.y + 20.8 }; });
+      const kreise = ablaufSchritte.map((li) => { const p = pos(li); return { x: p.x + 24, y: p.y + 20.8 }; });
       const ax = kreise[0].x, y1 = kreise[0].y, yN = kreise[kreise.length - 1].y;
 
+      // Abschnitte sammeln: d = Pfadstück, z = Scroll-Zielhöhe am Ende des Stücks
+      const seg = [];
+      const neu = (d, z) => seg.push({ d, z });
+      neu(`M${sx} ${sy}`, sy);
+
+      // 1) in den Verkaufsablauf (mobil an der Einleitung vorbei)
+      const ip = pos($('.ablauf__intro'));
+      if (ip.y + ip.h < y1 - 10) {
+        const yR = Math.max(sy + 50, ip.y - 10);
+        neu(`C${sx} ${sy + 40} ${randL} ${sy + 20} ${randL} ${yR}`, yR);
+        neu(`L${randL} ${y1 - 70}`, y1 - 70);
+        neu(`C${randL} ${y1 - 30} ${ax} ${y1 - 45} ${ax} ${y1}`, y1);
+      } else {
+        neu(`C${sx} ${sy + 120} ${ax} ${y1 - 150} ${ax} ${y1}`, y1);
+      }
+      neu(`L${ax} ${yN}`, yN);
+      neu(`C${ax} ${yN + 160} ${randL} ${yN + 80} ${randL} ${yN + 260}`, yN + 260);
+
+      // 2) „Wobei wir helfen“: links herunter, dann waagerecht über die Oberkante des Kastens nach rechts
+      const anliegen = $('.start .anliegen');
+      if (anliegen) {
+        const ab = pos(anliegen), yT = ab.y;
+        // Eckradius passend zum verfügbaren Rand (mobil nur wenige Pixel), damit die Ecke nicht ins Feld schneidet
+        const rL = Math.max(3, Math.min(24, ab.x - randL - 2)), rR = Math.max(3, Math.min(24, randR - (ab.x + ab.w) - 2));
+        neu(`L${randL} ${yT - rL}`, yT - rL);
+        neu(`Q${randL} ${yT} ${randL + rL} ${yT}`, yT);
+        neu(`L${randR - rR} ${yT}`, yT + 300);          // langsame Querfahrt
+        neu(`Q${randR} ${yT} ${randR} ${yT + rR}`, yT + 320);
+      }
+
+      // 3) rechts herunter bis unter die Region, dann in weitem Bogen zurück nach links
+      const regionAbschnitt = $('.start .region')?.closest('section');
+      const stimmenKopf = $('#stimmen-titel')?.closest('.abschnitt__kopf');
       const bp = pos(kontaktBand), hp = pos($('h2', kontaktBand));
       const yb = hp.y - 16, xl = hp.x;
+      if (regionAbschnitt && stimmenKopf) {
+        const inhalt = $$('.rahmen > *', regionAbschnitt).map(pos);
+        const kopfY = pos(stimmenKopf).y;
+        const y0 = Math.min(Math.max(...inhalt.map((p) => p.y + p.h)) + 40, kopfY - 70);
+        const yK = Math.max(y0 + 40, kopfY - 24);
+        neu(`L${randR} ${y0}`, y0);
+        neu(`C${randR} ${y0 + (yK - y0) * 0.75} ${randL} ${yK - (yK - y0) * 0.75} ${randL} ${yK}`, yK + 220);
+      }
+      neu(`L${randL} ${yb - 26}`, yb - 26);
 
-      // Mobil stehen Einleitung (mit Knopf) und Schritte untereinander:
-      // dann zuerst an den Rand, an der Einleitung vorbei, und erst kurz vor Schritt 1 einbiegen.
-      const ip = pos($('.ablauf__intro'));
-      const untereinander = ip.y + ip.h < y1 - 10;
-      const zumErstenSchritt = untereinander
-        ? [
-          `C${sx} ${sy + 40} ${randX} ${sy + 20} ${randX} ${Math.max(sy + 50, ip.y - 10)}`,
-          `L${randX} ${y1 - 70}`,
-          `C${randX} ${y1 - 30} ${ax} ${y1 - 45} ${ax} ${y1}`
-        ]
-        : [`C${sx} ${sy + 120} ${ax} ${y1 - 150} ${ax} ${y1}`];
-      const d = [
-        `M${sx} ${sy}`,
-        ...zumErstenSchritt,
-        `L${ax} ${yN}`,
-        `C${ax} ${yN + 160} ${randX} ${yN + 80} ${randX} ${yN + 260}`,
-        `L${randX} ${yb - 26}`
-      ].join(' ');
-      linie.setAttribute('d', d);
+      // Pfad setzen und Länge je Abschnitt bestimmen
+      abschnitte = []; let dSoFar = '', zMax = -Infinity;
+      for (const s of seg) {
+        dSoFar += (dSoFar ? ' ' : '') + s.d;
+        linie.setAttribute('d', dSoFar);
+        zMax = Math.max(zMax, s.z);
+        abschnitte.push({ l: linie.getTotalLength(), z: zMax });
+      }
+      laenge = abschnitte[abschnitte.length - 1].l;
 
-      // Dach wie im Logo: linke Schräge, Lücke, Kamin mit Punkt, rechte Schräge
-      // Die Linie steigt vom Rand direkt als Dachschräge auf (Proportionen wie im Logo)
-      const x0 = randX, Wd = Math.min(240, Math.max(150, (xl - x0) + hp.w * 0.28)), Hd = Wd * 0.3;
+      // 4) Dach wie im Logo: die Linie steigt vom Rand in einem weichen Bogen als Dachschräge auf
+      const x0 = randL, Wd = Math.min(240, Math.max(150, (xl - x0) + hp.w * 0.28)), Hd = Wd * 0.3;
       const kx = x0 + Wd * 0.585;
       dach.setAttribute('d', [
-        // weicher Bogen aus der Senkrechten in die Dachschräge
         `M${x0} ${yb - 26} Q${x0} ${yb} ${x0 + 16} ${yb - 16 * Hd / (Wd * 0.47)} L${x0 + Wd * 0.47} ${yb - Hd}`,
         `M${kx} ${yb - Hd - 18} L${kx} ${yb - Hd - 9}`,
         `M${kx} ${yb - Hd + 2} L${kx} ${yb - 2}`,
         `M${x0 + Wd * 0.655} ${yb - Hd + 12} L${x0 + Wd} ${yb}`
       ].join(' '));
       dachStart = yb - 40;
-
-      laenge = linie.getTotalLength();
       dachLaenge = dach.getTotalLength();
       linie.style.strokeDasharray = laenge; dach.style.strokeDasharray = dachLaenge;
-      // Proben entlang der Linie: Länge → größte bisher erreichte Höhe (y)
-      proben = []; let maxY = -Infinity;
-      for (let i = 0; i <= 400; i++) {
-        const l = (laenge * i) / 400, p = linie.getPointAtLength(l);
-        maxY = Math.max(maxY, p.y); proben.push({ l, y: maxY });
-      }
+
+      // Anker: Elemente werden aktiv, sobald die gezeichnete Länge ihren nächstgelegenen Punkt erreicht
+      const proben = [];
+      for (let i = 0; i <= 900; i++) { const l = (laenge * i) / 900, p = linie.getPointAtLength(l); proben.push({ l, x: p.x, y: p.y }); }
+      const laengeBei = (x, y) => { let best = 0, bd = Infinity; for (const p of proben) { const d = (p.x - x) ** 2 + (p.y - y) ** 2; if (d < bd) { bd = d; best = p.l; } } return best; };
+      ankerListe = [];
+      ablaufSchritte.forEach((li, i) => ankerListe.push({ el: li, l: laengeBei(kreise[i].x, kreise[i].y), klasse: 'erreicht' }));
+      const felder = $$('.start .anliegen__feld');
+      const nebeneinander = felder.length > 1 && Math.abs(pos(felder[1]).y - pos(felder[0]).y) < 5;
+      felder.forEach((f) => { const p = pos(f); ankerListe.push({ el: f, l: nebeneinander ? laengeBei(p.x + p.w / 2, p.y) : laengeBei(p.x + p.w, p.y + p.h / 2) }); });
+      const person = $('.start .persoenlich .person');
+      if (person) { const p = pos(person); ankerListe.push({ el: person, l: laengeBei(p.x + p.w, p.y + p.h / 2) }); }
+      const region = $('.start .region');
+      if (region) { const p = pos(region); ankerListe.push({ el: region, l: laengeBei(p.x + p.w, p.y + p.h / 2) }); }
+      $$('.start .stimme').forEach((s) => { const p = pos(s); ankerListe.push({ el: s, l: laengeBei(randL, p.y + 30) }); });
+
       bereit = true;
       zeichnen();
+    };
+
+    // Scrollposition → gezeichnete Länge (stückweise linear je Abschnitt)
+    const laengeFuer = (ziel) => {
+      if (ziel <= abschnitte[0].z) return 0;
+      for (let i = 1; i < abschnitte.length; i++) {
+        const a = abschnitte[i - 1], b = abschnitte[i];
+        if (ziel <= b.z) return b.z === a.z ? b.l : a.l + (b.l - a.l) * (ziel - a.z) / (b.z - a.z);
+      }
+      return laenge;
     };
 
     const zeichnen = () => {
       if (!bereit) return;
       const mr = main.getBoundingClientRect();
       const ziel = ruhig ? Infinity : window.innerHeight * 0.62 - mr.top;
-      // Länge suchen, bei der die Linie die Zielhöhe erreicht
-      let lo = 0, hi = proben.length - 1;
-      if (ziel <= proben[0].y) hi = 0;
-      else if (ziel >= proben[hi].y) lo = hi;
-      else { while (hi - lo > 1) { const m = (lo + hi) >> 1; if (proben[m].y < ziel) lo = m; else hi = m; } }
-      const l = ziel >= proben[proben.length - 1].y ? laenge : proben[hi === 0 ? 0 : lo].l;
+      const l = laengeFuer(ziel);
       linie.style.strokeDashoffset = laenge - l;
       const t = Math.min(1, Math.max(0, (ziel - dachStart) / 220));
       dach.style.strokeDashoffset = dachLaenge * (1 - t);
@@ -246,7 +291,7 @@
       const p = t > 0 ? dach.getPointAtLength(dachLaenge * t) : linie.getPointAtLength(l);
       spitze.setAttribute('cx', p.x.toFixed(1)); spitze.setAttribute('cy', p.y.toFixed(1));
       spitze.classList.toggle('ist-sichtbar', l > 2 && t < 1 && !ruhig);
-      kreise.forEach((k) => k.li.classList.toggle('erreicht', ziel >= k.y));
+      ankerListe.forEach((a) => a.el.classList.toggle(a.klasse || 'aktiv', l >= a.l - 1));
     };
 
     let anfrage = 0;

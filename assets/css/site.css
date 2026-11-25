@@ -607,3 +607,30 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 2px 
 .start .schritte li.erreicht::before { background: var(--gold); border-color: var(--gold); color: var(--nacht); }
 .start .band--nacht { padding-top: clamp(6.5rem, 11vw, 8.5rem); }
 @media print { .faden { display: none; } }
+
+/* Vom goldenen Faden aktivierte Elemente (nur wenn das Skript läuft: .faden-an) */
+.faden-an .anliegen__feld { position: relative; }
+.faden-an .anliegen__feld::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--gold); transform: scaleX(0); transform-origin: left center; transition: transform .7s cubic-bezier(.3, .7, .2, 1); }
+.faden-an .anliegen__feld.aktiv::before { transform: scaleX(1); }
+.faden-an .anliegen__feld h3 { transition: color .5s; }
+.faden-an .anliegen__feld.aktiv h3 { color: var(--nacht); }
+
+.faden-an .persoenlich .person { transition: border-color .6s, box-shadow .6s; }
+.faden-an .persoenlich .person.aktiv { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 18px 40px -24px rgba(11, 35, 65, .35); }
+.faden-an .persoenlich .person__foto--initialen { transition: background-color .6s, color .6s; }
+.faden-an .persoenlich .person.aktiv .person__foto--initialen { background: var(--gold); color: var(--nacht); }
+
+.faden-an .region .karte-ring { transition: stroke .6s; }
+.faden-an .region.aktiv .karte-ring { stroke: var(--gold-linie, #b08a1e); }
+.faden-an .region.aktiv .karte-ring:nth-of-type(2) { transition-delay: .15s; }
+.faden-an .region.aktiv .karte-ring:nth-of-type(3) { transition-delay: .3s; }
+.faden-an .region.aktiv .karte-ring:nth-of-type(4) { transition-delay: .45s; }
+.faden-an .region .karte-buero { transform-box: fill-box; transform-origin: center; }
+.faden-an .region.aktiv .karte-buero { animation: buero-puls 1.4s ease .2s 2; }
+@keyframes buero-puls { 50% { transform: scale(1.7); } }
+
+.faden-an .stimme .sterne { color: transparent; background: linear-gradient(90deg, var(--gold-tief) 50%, #d6dad4 50%) right / 200% 100% no-repeat; -webkit-background-clip: text; background-clip: text; transition: background-position 1.2s ease; }
+.faden-an .stimme.aktiv .sterne { background-position: left; }
+.faden-an .stimme:nth-child(2) .sterne { transition-delay: .25s; }
+.faden-an .stimme:nth-child(3) .sterne { transition-delay: .5s; }
+.faden-an .stimme { transition: border-color .6s; }
