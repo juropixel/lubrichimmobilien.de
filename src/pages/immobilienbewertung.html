@@ -1,0 +1,182 @@
+<!-- {
+  "pfad": "immobilienbewertung/",
+  "titel": "Kostenlose Immobilienbewertung im Weimarer Land | Lubrich Immobilien",
+  "beschreibung": "Was ist Ihr Haus, Ihre Wohnung oder Ihr Grundstück wert? Kostenlose und unverbindliche Wertermittlung für Bad Berka, Weimar und das Weimarer Land – in wenigen Schritten online anfragen.",
+  "klasse": "bewertung-seite"
+} -->
+<section class="seitenkopf seitenkopf--knapp">
+  <div class="rahmen">
+    <h1>Was ist Ihre Immobilie wert?</h1>
+    <p class="seitenkopf__text">Beantworten Sie ein paar Fragen zu Ihrer Immobilie. Wir ermitteln den aktuellen Marktwert und melden uns mit unserer Einschätzung – kostenlos und unverbindlich.</p>
+  </div>
+</section>
+
+<section class="rahmen bewertung" aria-label="Wertermittlung">
+  <form class="rechner" data-rechner novalidate>
+    <div class="rechner__fortschritt" aria-hidden="true"><span data-balken></span></div>
+    <p class="rechner__schritt" data-schritt-text aria-live="polite">Schritt 1</p>
+
+    <!-- 1: Art -->
+    <fieldset class="schritt" data-schritt="art">
+      <legend>Welche Immobilie möchten Sie bewerten lassen?</legend>
+      <div class="optionen optionen--4">
+        <label class="wahl"><input type="radio" name="art" value="grundstueck" data-text="Grundstück">{{pikto:grundstueck}}<span>Grundstück</span></label>
+        <label class="wahl"><input type="radio" name="art" value="haus" data-text="Haus">{{pikto:haus}}<span>Haus</span></label>
+        <label class="wahl"><input type="radio" name="art" value="wohnung" data-text="Wohnung">{{pikto:wohnung}}<span>Wohnung</span></label>
+        <label class="wahl"><input type="radio" name="art" value="gewerbe" data-text="Gewerbe">{{pikto:gewerbe}}<span>Gewerbe</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="haustyp" hidden>
+      <legend>Um welche Art von Haus handelt es sich?</legend>
+      <div class="optionen optionen--2">
+        <label class="wahl"><input type="radio" name="haustyp" value="Einfamilienhaus" data-text="Einfamilienhaus">{{pikto:efh}}<span>Einfamilienhaus</span></label>
+        <label class="wahl"><input type="radio" name="haustyp" value="Mehrfamilienhaus" data-text="Mehrfamilienhaus">{{pikto:mfh}}<span>Mehrfamilienhaus</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="gewerbetyp" hidden>
+      <legend>Welche Art von Gewerbeimmobilie ist es?</legend>
+      <div class="optionen optionen--3">
+        <label class="wahl"><input type="radio" name="gewerbetyp" value="Bürogebäude" data-text="Bürogebäude">{{pikto:buero}}<span>Bürogebäude</span></label>
+        <label class="wahl"><input type="radio" name="gewerbetyp" value="Wohn- und Geschäftshaus" data-text="Wohn- und Geschäftshaus">{{pikto:wohnGeschaeft}}<span>Wohn- und Geschäftshaus</span></label>
+        <label class="wahl"><input type="radio" name="gewerbetyp" value="Industrie- oder Lagerhalle" data-text="Industrie- oder Lagerhalle">{{pikto:halle}}<span>Industrie- oder Lagerhalle</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="baujahr" hidden>
+      <legend data-legende-wohnung="In welchem Jahr wurde das Haus gebaut, in dem die Wohnung liegt?">Wann wurde die Immobilie gebaut?</legend>
+      <div class="regler" data-regler>
+        <label for="r-baujahr">Baujahr</label>
+        <div class="regler__eingabe"><input id="r-baujahr" name="baujahr" type="number" inputmode="numeric" min="1800" max="{{jahr}}" step="1" value="1985" required></div>
+        <input type="range" min="1900" max="{{jahr}}" step="1" value="1985" aria-label="Baujahr mit Schieberegler wählen" data-fuer="r-baujahr">
+        <p class="regler__skala"><span>1900 oder älter</span><span>{{jahr}}</span></p>
+      </div>
+      <button class="knopf" type="button" data-weiter>Weiter</button>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="flaeche" hidden>
+      <legend data-legende-gewerbe="Wie groß ist die Nutzfläche?" data-legende-wohnung="Wie groß ist die Wohnung?">Wie groß ist die Wohnfläche?</legend>
+      <div class="regler" data-regler>
+        <label for="r-flaeche" data-label-gewerbe="Nutzfläche">Wohnfläche</label>
+        <div class="regler__eingabe"><input id="r-flaeche" name="flaeche" type="number" inputmode="numeric" min="10" max="20000" step="1" value="120" required><span>m²</span></div>
+        <input type="range" min="20" max="400" step="5" value="120" aria-label="Fläche mit Schieberegler wählen" data-fuer="r-flaeche" data-max-gewerbe="5000">
+        <p class="regler__skala"><span>20 m²</span><span data-skala-max>400 m² und mehr</span></p>
+      </div>
+      <button class="knopf" type="button" data-weiter>Weiter</button>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="grundstueck" hidden>
+      <legend>Wie groß ist das Grundstück?</legend>
+      <div class="regler" data-regler>
+        <label for="r-grundstueck">Grundstücksfläche</label>
+        <div class="regler__eingabe"><input id="r-grundstueck" name="grundstueck" type="number" inputmode="numeric" min="10" max="1000000" step="1" value="600" required><span>m²</span></div>
+        <input type="range" min="100" max="5000" step="10" value="600" aria-label="Grundstücksfläche mit Schieberegler wählen" data-fuer="r-grundstueck">
+        <p class="regler__skala"><span>100 m²</span><span>5.000 m² und mehr</span></p>
+      </div>
+      <button class="knopf" type="button" data-weiter>Weiter</button>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="erschliessung" hidden>
+      <legend>Wie ist das Grundstück erschlossen?</legend>
+      <div class="optionen optionen--3">
+        <label class="wahl"><input type="radio" name="erschliessung" value="Erschlossen" data-text="Erschlossen">{{pikto:erschlossen}}<span>Erschlossen</span></label>
+        <label class="wahl"><input type="radio" name="erschliessung" value="Teilerschlossen" data-text="Teilerschlossen">{{pikto:teilerschlossen}}<span>Teilerschlossen</span></label>
+        <label class="wahl"><input type="radio" name="erschliessung" value="Unerschlossen" data-text="Unerschlossen">{{pikto:unerschlossen}}<span>Unerschlossen</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="zimmer" hidden>
+      <legend>Wie viele Zimmer hat die Wohnung?</legend>
+      <div class="optionen optionen--4">
+        <label class="wahl"><input type="radio" name="zimmer" value="1–2 Zimmer" data-text="1–2 Zimmer">{{pikto:zimmer1}}<span>1–2 Zimmer</span></label>
+        <label class="wahl"><input type="radio" name="zimmer" value="3–4 Zimmer" data-text="3–4 Zimmer">{{pikto:zimmer2}}<span>3–4 Zimmer</span></label>
+        <label class="wahl"><input type="radio" name="zimmer" value="5–6 Zimmer" data-text="5–6 Zimmer">{{pikto:zimmer3}}<span>5–6 Zimmer</span></label>
+        <label class="wahl"><input type="radio" name="zimmer" value="Mehr als 6 Zimmer" data-text="Mehr als 6 Zimmer">{{pikto:zimmer4}}<span>Mehr als 6</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="lage" hidden>
+      <legend>Wo liegt die Immobilie?</legend>
+      <div class="felder felder--2">
+        <div class="feld"><label for="r-plz">Postleitzahl*</label><input id="r-plz" name="plz" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" required placeholder="z. B. 99438"></div>
+        <div class="feld"><label for="r-ort">Ort</label><input id="r-ort" name="ort" autocomplete="address-level2"></div>
+        <div class="feld feld--breit"><label for="r-strasse">Straße und Hausnummer <span class="optional">(optional)</span></label><input id="r-strasse" name="strasse" autocomplete="street-address"></div>
+      </div>
+      <button class="knopf" type="button" data-weiter>Weiter</button>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="anlass" hidden>
+      <legend>Wofür benötigen Sie die Bewertung?</legend>
+      <div class="optionen optionen--liste">
+        <label class="wahl wahl--zeile"><input type="radio" name="anlass" value="Verkauf geplant" data-text="Verkauf geplant"><span>Ich möchte verkaufen</span></label>
+        <label class="wahl wahl--zeile"><input type="radio" name="anlass" value="Vermietung geplant" data-text="Vermietung geplant"><span>Ich möchte vermieten</span></label>
+        <label class="wahl wahl--zeile"><input type="radio" name="anlass" value="Erbschaft oder Schenkung" data-text="Erbschaft oder Schenkung"><span>Erbschaft oder Schenkung</span></label>
+        <label class="wahl wahl--zeile"><input type="radio" name="anlass" value="Trennung oder Scheidung" data-text="Trennung oder Scheidung"><span>Trennung oder Scheidung</span></label>
+        <label class="wahl wahl--zeile"><input type="radio" name="anlass" value="Nur Interesse am Wert" data-text="Nur Interesse am Wert"><span>Ich möchte nur den Wert wissen</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" data-schritt="kontakt" hidden>
+      <legend>Wohin dürfen wir Ihre Wertermittlung schicken?</legend>
+      <p class="schritt__hinweis">Wir melden uns persönlich bei Ihnen, um offene Fragen zu klären. Ihre Daten geben wir nicht weiter.</p>
+      <div class="anrede" role="radiogroup" aria-label="Anrede">
+        <label><input type="radio" name="anrede" value="Frau"> Frau</label>
+        <label><input type="radio" name="anrede" value="Herr"> Herr</label>
+        <label><input type="radio" name="anrede" value="Divers"> Divers</label>
+      </div>
+      <div class="felder felder--2">
+        <div class="feld feld--breit"><label for="r-name">Vor- und Nachname*</label><input id="r-name" name="name" autocomplete="name" required></div>
+        <div class="feld"><label for="r-tel">Telefon*</label><input id="r-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+        <div class="feld"><label for="r-mail">E-Mail*</label><input id="r-mail" name="email" type="email" autocomplete="email" required></div>
+        <div class="feld feld--breit"><label for="r-msg">Anmerkungen <span class="optional">(optional)</span></label><textarea id="r-msg" name="nachricht" rows="3" placeholder="z. B. Zustand, Modernisierungen, beste Zeit für einen Rückruf"></textarea></div>
+      </div>
+      {{honeypot}}
+      {{einwilligung}}
+      <button class="knopf knopf--gold" type="submit">Wertermittlung anfordern</button>
+    </fieldset>
+
+    <div class="schritt rechner__fertig" data-schritt="fertig" hidden tabindex="-1">
+      <h2>Vielen Dank – Ihre Anfrage ist da.</h2>
+      <p data-fertig-text>Wir sehen uns Ihre Angaben an und melden uns in Kürze bei Ihnen.</p>
+      <p>Sie haben noch Fragen? Rufen Sie uns an: <a href="tel:{{telefonLink}}">{{telefon}}</a></p>
+    </div>
+
+    <div class="formular__status" role="status" aria-live="polite"></div>
+    <div class="rechner__navigation">
+      <button class="textknopf" type="button" data-zurueck hidden>Zurück</button>
+    </div>
+  </form>
+
+  <aside class="bewertung__seite">
+    <div class="zusammenfassung" data-zusammenfassung hidden>
+      <h2>Ihre Angaben</h2>
+      <dl data-liste></dl>
+    </div>
+    <ul class="vorteile">
+      <li><strong>Ohne Vorgespräch</strong> Sie entscheiden, wann wir sprechen.</li>
+      <li><strong>In wenigen Klicks</strong> Etwa zwei Minuten.</li>
+      <li><strong>Aktueller Marktwert</strong> Von einem Makler, der die Region kennt.</li>
+    </ul>
+    {{ansprechpartner}}
+  </aside>
+</section>
+
+<section class="abschnitt abschnitt--kalk" aria-labelledby="warum-titel">
+  <div class="rahmen zwei-spalten">
+    <div class="fliesstext">
+      <h2 id="warum-titel">Warum eine Bewertung durch einen Makler aus der Region?</h2>
+      <p>Das Weimarer Land und der Raum um Bad Berka, Magdala und Kranichfeld sind beliebt – bei Käufern wie bei Mietern. Die Preise unterscheiden sich aber stark je nach Lage und Art der Immobilie. Ein Einfamilienhaus in Klettbach erzielt nicht denselben Preis wie ein ähnliches Haus in Grammetal oder Blankenhain.</p>
+      <p>Auch bei Eigentumswohnungen in Weimar gibt es kaum einheitliche Quadratmeterpreise. Online-Rechner arbeiten mit Durchschnittswerten und kennen weder Zustand noch Ausstattung Ihrer Immobilie.</p>
+    </div>
+    <div class="fliesstext">
+      <h2>So geht es weiter</h2>
+      <ol class="nummern">
+        <li>Wir prüfen Ihre Angaben und berücksichtigen Lage, Zustand und die aktuelle Marktentwicklung.</li>
+        <li>Wir rufen Sie an und klären offene Fragen – auf Wunsch mit Besichtigung vor Ort.</li>
+        <li>Sie erhalten unsere Einschätzung zum realistisch erzielbaren Preis.</li>
+      </ol>
+      <p>Die Bewertung ist kostenlos und verpflichtet Sie zu nichts.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+<!-- {
+  "pfad": "kontakt/",
+  "titel": "Kontakt | Lubrich Immobilien Bad Berka",
+  "beschreibung": "So erreichen Sie Lubrich Immobilien in Bad Berka: Telefon 0172 7570689, E-Mail info@lubrichimmobilien.de oder über unser Kontaktformular."
+} -->
+<section class="seitenkopf">
+  <div class="rahmen">
+    <h1>Kontakt</h1>
+    <p class="seitenkopf__text">Rufen Sie an, schreiben Sie uns oder nutzen Sie das Formular. Wir melden uns so schnell wie möglich.</p>
+  </div>
+</section>
+
+<section class="rahmen abschnitt kontakt">
+  <div class="kontakt__daten">
+    <h2>Lubrich Immobilien</h2>
+    <address>Johann-Scholz-Straße 41<br>99438 Bad Berka</address>
+    <p class="kontakt__wege">
+      <a href="tel:{{telefonLink}}">{{icon:telefon}}{{telefon}}</a>
+      <a href="mailto:{{email}}">{{icon:mail}}{{email}}</a>
+    </p>
+    <p><a class="textlink" href="https://www.openstreetmap.org/search?query=Johann-Scholz-Stra%C3%9Fe%2041%2C%2099438%20Bad%20Berka" target="_blank" rel="noopener">Route planen</a></p>
+    {{ansprechpartner}}
+  </div>
+
+  <form class="formular formular--gross" data-formular="kontakt" data-betreff="Kontaktanfrage über die Website" novalidate>
+    <h2>Ihre Nachricht</h2>
+    <div class="anrede" role="radiogroup" aria-label="Anrede">
+      <label><input type="radio" name="anrede" value="Frau"> Frau</label>
+      <label><input type="radio" name="anrede" value="Herr"> Herr</label>
+      <label><input type="radio" name="anrede" value="Divers"> Divers</label>
+    </div>
+    <div class="felder felder--2">
+      <div class="feld"><label for="k-vorname">Vorname</label><input id="k-vorname" name="vorname" autocomplete="given-name"></div>
+      <div class="feld"><label for="k-name">Name*</label><input id="k-name" name="name" autocomplete="family-name" required></div>
+      <div class="feld"><label for="k-mail">E-Mail*</label><input id="k-mail" name="email" type="email" autocomplete="email" required></div>
+      <div class="feld"><label for="k-tel">Telefon</label><input id="k-tel" name="telefon" type="tel" autocomplete="tel"></div>
+      <div class="feld feld--breit"><label for="k-msg">Nachricht*</label><textarea id="k-msg" name="nachricht" rows="5" required></textarea></div>
+    </div>
+
+    <details class="suche" id="suche">
+      <summary>Ich suche eine Immobilie</summary>
+      <div class="felder felder--2">
+        <div class="feld"><label for="k-art">Objektart</label>
+          <select id="k-art" name="such_objektart">
+            <option value="">Bitte wählen</option>
+            <option>Einfamilienhaus</option><option>Mehrfamilienhaus</option><option>Eigentumswohnung</option>
+            <option>Mietwohnung</option><option>Kapitalanlage / Renditeobjekt</option><option>Grundstück</option><option>Sonstiges</option>
+          </select></div>
+        <div class="feld"><label for="k-budget">Preisvorstellung</label><input id="k-budget" name="such_preis" placeholder="z. B. bis 400.000 €"></div>
+        <div class="feld"><label for="k-ort">Wunschort oder Region</label><input id="k-ort" name="such_ort" placeholder="z. B. Bad Berka, Weimar"></div>
+        <div class="feld"><label for="k-zimmer">Zimmer / Fläche</label><input id="k-zimmer" name="such_groesse" placeholder="z. B. ab 4 Zimmer, 120 m²"></div>
+        <div class="feld feld--breit"><label for="k-wunsch">Weitere Wünsche</label><textarea id="k-wunsch" name="such_wuensche" rows="3"></textarea></div>
+      </div>
+    </details>
+    {{honeypot}}
+    {{einwilligung}}
+    <button class="knopf" type="submit">Nachricht senden</button>
+    <p class="pflicht">* Pflichtfelder</p>
+    <div class="formular__status" role="status" aria-live="polite"></div>
+  </form>
+</section>

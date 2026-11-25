@@ -1,0 +1,907 @@
+{
+  "quelle": "Übernahme von lubrichimmobilien.de (OpenImmo-Import aus onOffice)",
+  "aktualisiert": "2026-11-25T12:54:50+00:00",
+  "objekte": [
+    {
+      "id": "269",
+      "objektnr": "269",
+      "titel": "Sofort enziehen? Familienfreundliches Einfamilienhaus in begehrter Lage von Bad Berka",
+      "slug": "sofort-enziehen-familienfreundliches-einfamilienhaus-in-begehrter-lage-von-bad-berka",
+      "objektart": "Haus",
+      "nutzungsart": "Wohnen",
+      "vermarktung": "Kauf",
+      "status": "aktiv",
+      "adresse": {
+        "strasse": "Bad Dürkheimer Straße",
+        "plz": "99438",
+        "ort": "Bad Berka"
+      },
+      "preise": {
+        "kaufpreis": 529000
+      },
+      "flaechen": {
+        "wohnflaeche": 120,
+        "nutzflaeche": 198,
+        "grundstuecksflaeche": 578
+      },
+      "zimmer": 5,
+      "schlafzimmer": 4,
+      "badezimmer": 2,
+      "stellplaetze": 4,
+      "baujahr": 1998,
+      "ausstattung": [
+        {
+          "label": "Heizungsart",
+          "wert": "Zentralheizung"
+        },
+        {
+          "label": "Befeuerung",
+          "wert": "Gas"
+        },
+        {
+          "label": "Terrasse",
+          "wert": "Ja"
+        }
+      ],
+      "energie": {
+        "art": "Verbrauchsausweis",
+        "gueltigBis": "05.08.2034",
+        "verbrauchskennwert": 151.8,
+        "energietraeger": "Gas"
+      },
+      "texte": [
+        {
+          "titel": "Lage",
+          "text": "Bad Berka zählt zu den beliebtesten Wohnorten der Region und vereint naturnahes Wohnen mit einer hervorragend entwickelten Infrastruktur. Die Kurstadt liegt idyllisch im mittleren Ilmtal und bietet mit ihren weitläufigen Grünflächen, dem Kurpark und der waldreichen Umgebung ein außergewöhnlich hohes Maß an Lebensqualität.\n\n\n\nGleichzeitig profitieren Bewohner von der Nähe zu den Städten Weimar und Erfurt, die beide in kurzer Fahrzeit erreichbar sind. Einkaufsmöglichkeiten, medizinische Versorgung – einschließlich der renommierten Zentralklinik –, Kindergärten, Schulen sowie zahlreiche Freizeit- und Erholungsangebote befinden sich direkt vor Ort. Eine Bushaltestelle sowie der Bahnhof Bad Berka sind in nur etwa drei Gehminuten erreichbar und sorgen für eine hervorragende Anbindung an den öffentlichen Nahverkehr.\n\n\n\nBad Berka ist geprägt von einem gepflegten, ruhigen Wohnumfeld und einer gewachsenen Nachbarschaft. Spazier- und Wanderwege, Radstrecken sowie vielfältige Kultur- und Wellnessangebote machen den Ort sowohl für Familien als auch für Berufspendler und Ruhesuchende besonders attraktiv.\n\n\n\nDie Kombination aus naturnaher Umgebung, guter Erreichbarkeit und lebenswertem Stadtbild macht Bad Berka zu einer der gefragtesten Wohnlagen im Weimarer Land."
+        },
+        {
+          "titel": "Objektbeschreibung",
+          "text": "Dieses gepflegte Einfamilienhaus in Bad Berka vereint rund 120 m² Wohnfläche mit einem 578 m² großen Grundstück und bietet genau den Freiraum, den viele Familien heute suchen.\n\n\n\nDer Lebensmittelpunkt des Hauses befindet sich im Erdgeschoss. Der Wohnbereich öffnet sich zur sonnigen Südterrasse und schafft einen fließenden Übergang zwischen Innen- und Außenbereich. \n\n\n\nEin weiterer Vorteil ist das zusätzliche Zimmer im Erdgeschoss. Je nach Lebenssituation lässt es sich ideal als Homeoffice, Gästezimmer oder auch als Schlafzimmer auf einer Ebene nutzen und sorgt so für ein hohes Maß an Flexibilität.\n\n\n\nIm Dachgeschoss stehen die privaten Rückzugsräume zur Verfügung. Hier finden Familien ebenso wie Paare ausreichend Platz, um ihre individuellen Wohnideen zu verwirklichen.\n\n\n\nDas vollständig unterkellerte Haus bietet darüber hinaus zahlreiche Nutzflächen, die den Alltag spürbar erleichtern. Ob Vorräte, Hobby, Fitness oder Werkstatt – hier ist genügend Raum für alles, was im Wohnbereich keinen Platz finden soll.\n\n\n\nBereits installiert ist eine Photovoltaikanlage, die das Haus sinnvoll ergänzt und einen zusätzlichen Mehrwert für die zukünftigen Eigentümer schafft.\n\n\n\nAbgerundet wird das Angebot durch ein großzügiges, durchgehendes Carport mit elektrischem Rolltor. Es bietet komfortabel Platz für zwei hintereinander abgestellte Fahrzeuge und verbindet praktischen Nutzen mit einem geschützten Stellplatz für Pkw, Fahrräder oder weitere Ausstattungsgegenstände.\n\n\n\nEine Immobilie, die mit ihrer gelungenen Raumaufteilung, der attraktiven Südausrichtung und den vielseitigen Nutzungsmöglichkeiten beste Voraussetzungen für ein langfristiges Zuhause in Bad Berka bietet.\n\n\n\nGerne überzeugen Sie sich bei einer persönlichen Besichtigung vom gepflegten Zustand und den Vorzügen dieser Immobilie."
+        },
+        {
+          "titel": "Sonstige Angaben",
+          "text": "Bei Vertragsabschluss zahlt der Käufer der Immobilie die im Exposé angegebene Courtage vom Verkaufspreis, inkl. der gesetzlichen Mehrwertsteuer. Die Angaben beruhen auf Angaben des Verkäufers. Für Richtigkeit und Vollständigkeit übernimmt Lubrich Immobilien keine Gewähr. Die Courtage auf den Kaufpreis ist mit dem Abschluss des Kaufvertrages verdient und fällig. Lubrich Immobilien erhält einen unmittelbaren Zahlungsanspruch gegenüber den Käufer. Alle Angaben in diesem Exposé wurden sorgfältig und so vollständig wie möglich gemacht. Gleichwohl kann das Vorhandensein von Fehlern nicht ausgeschlossen werden. Bitte beachten Sie, dass unsere Grundrisse vom Maßstab abweichen können. Die Angaben in diesem Exposé erfolgen daher ohne jede Gewähr. Maßgeblich sind die im Kaufvertrag geschlossenen Vereinbarungen."
+        }
+      ],
+      "bilder": [
+        {
+          "datei": "bilder/immobilien/269/00.webp",
+          "klein": "bilder/immobilien/269/00-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/01.webp",
+          "klein": "bilder/immobilien/269/01-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/02.webp",
+          "klein": "bilder/immobilien/269/02-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/03.webp",
+          "klein": "bilder/immobilien/269/03-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/04.webp",
+          "klein": "bilder/immobilien/269/04-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/05.webp",
+          "klein": "bilder/immobilien/269/05-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/06.webp",
+          "klein": "bilder/immobilien/269/06-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/07.webp",
+          "klein": "bilder/immobilien/269/07-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/08.webp",
+          "klein": "bilder/immobilien/269/08-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/269/09.webp",
+          "klein": "bilder/immobilien/269/09-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1270
+        },
+        {
+          "datei": "bilder/immobilien/269/10.webp",
+          "klein": "bilder/immobilien/269/10-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "datei": "bilder/immobilien/269/11.webp",
+          "klein": "bilder/immobilien/269/11-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "datei": "bilder/immobilien/269/12.webp",
+          "klein": "bilder/immobilien/269/12-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "datei": "bilder/immobilien/269/13.webp",
+          "klein": "bilder/immobilien/269/13-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        }
+      ]
+    },
+    {
+      "id": "270",
+      "objektnr": "270",
+      "titel": "Sofort einziehen? Familienfreundliches Einfamilienhaus in begehrter Lage von Bad Berka",
+      "slug": "sofort-einziehen-familienfreundliches-einfamilienhaus-in-begehrter-lage-von-bad-berka",
+      "objektart": "Haus",
+      "nutzungsart": "Wohnen",
+      "vermarktung": "Kauf",
+      "status": "aktiv",
+      "adresse": {
+        "strasse": "Bad Dürkheimer Straße",
+        "plz": "99438",
+        "ort": "Bad Berka"
+      },
+      "preise": {
+        "kaufpreis": 529000
+      },
+      "flaechen": {
+        "wohnflaeche": 120,
+        "nutzflaeche": 198,
+        "grundstuecksflaeche": 578
+      },
+      "zimmer": 5,
+      "schlafzimmer": 4,
+      "badezimmer": 2,
+      "stellplaetze": 4,
+      "baujahr": 1998,
+      "ausstattung": [
+        {
+          "label": "Heizungsart",
+          "wert": "Zentralheizung"
+        },
+        {
+          "label": "Befeuerung",
+          "wert": "Gas"
+        },
+        {
+          "label": "Terrasse",
+          "wert": "Ja"
+        }
+      ],
+      "energie": {
+        "art": "Verbrauchsausweis",
+        "gueltigBis": "05.08.2034",
+        "verbrauchskennwert": 151.8,
+        "energietraeger": "Gas"
+      },
+      "texte": [
+        {
+          "titel": "Lage",
+          "text": "Bad Berka zählt zu den beliebtesten Wohnorten der Region und vereint naturnahes Wohnen mit einer hervorragend entwickelten Infrastruktur. Die Kurstadt liegt idyllisch im mittleren Ilmtal und bietet mit ihren weitläufigen Grünflächen, dem Kurpark und der waldreichen Umgebung ein außergewöhnlich hohes Maß an Lebensqualität.\n\n\n\nGleichzeitig profitieren Bewohner von der Nähe zu den Städten Weimar und Erfurt, die beide in kurzer Fahrzeit erreichbar sind. Einkaufsmöglichkeiten, medizinische Versorgung – einschließlich der renommierten Zentralklinik –, Kindergärten, Schulen sowie zahlreiche Freizeit- und Erholungsangebote befinden sich direkt vor Ort. Eine Bushaltestelle sowie der Bahnhof Bad Berka sind in nur etwa drei Gehminuten erreichbar und sorgen für eine hervorragende Anbindung an den öffentlichen Nahverkehr.\n\n\n\nBad Berka ist geprägt von einem gepflegten, ruhigen Wohnumfeld und einer gewachsenen Nachbarschaft. Spazier- und Wanderwege, Radstrecken sowie vielfältige Kultur- und Wellnessangebote machen den Ort sowohl für Familien als auch für Berufspendler und Ruhesuchende besonders attraktiv.\n\n\n\nDie Kombination aus naturnaher Umgebung, guter Erreichbarkeit und lebenswertem Stadtbild macht Bad Berka zu einer der gefragtesten Wohnlagen im Weimarer Land."
+        },
+        {
+          "titel": "Objektbeschreibung",
+          "text": "Dieses gepflegte Einfamilienhaus in Bad Berka vereint rund 120 m² Wohnfläche mit einem 578 m² großen Grundstück und bietet genau den Freiraum, den viele Familien heute suchen.\n\n\n\nDer Lebensmittelpunkt des Hauses befindet sich im Erdgeschoss. Der Wohnbereich öffnet sich zur sonnigen Südterrasse und schafft einen fließenden Übergang zwischen Innen- und Außenbereich. \n\n\n\nEin weiterer Vorteil ist das zusätzliche Zimmer im Erdgeschoss. Je nach Lebenssituation lässt es sich ideal als Homeoffice, Gästezimmer oder auch als Schlafzimmer auf einer Ebene nutzen und sorgt so für ein hohes Maß an Flexibilität.\n\n\n\nIm Dachgeschoss stehen die privaten Rückzugsräume zur Verfügung. Hier finden Familien ebenso wie Paare ausreichend Platz, um ihre individuellen Wohnideen zu verwirklichen.\n\n\n\nDas vollständig unterkellerte Haus bietet darüber hinaus zahlreiche Nutzflächen, die den Alltag spürbar erleichtern. Ob Vorräte, Hobby, Fitness oder Werkstatt – hier ist genügend Raum für alles, was im Wohnbereich keinen Platz finden soll.\n\n\n\nBereits installiert ist eine Photovoltaikanlage, die das Haus sinnvoll ergänzt und einen zusätzlichen Mehrwert für die zukünftigen Eigentümer schafft.\n\n\n\nAbgerundet wird das Angebot durch ein großzügiges, durchgehendes Carport mit elektrischem Rolltor. Es bietet komfortabel Platz für zwei hintereinander abgestellte Fahrzeuge und verbindet praktischen Nutzen mit einem geschützten Stellplatz für Pkw, Fahrräder oder weitere Ausstattungsgegenstände.\n\n\n\nEine Immobilie, die mit ihrer gelungenen Raumaufteilung, der attraktiven Südausrichtung und den vielseitigen Nutzungsmöglichkeiten beste Voraussetzungen für ein langfristiges Zuhause in Bad Berka bietet.\n\n\n\nGerne überzeugen Sie sich bei einer persönlichen Besichtigung vom gepflegten Zustand und den Vorzügen dieser Immobilie."
+        },
+        {
+          "titel": "Sonstige Angaben",
+          "text": "Bei Vertragsabschluss zahlt der Käufer der Immobilie die im Exposé angegebene Courtage vom Verkaufspreis, inkl. der gesetzlichen Mehrwertsteuer. Die Angaben beruhen auf Angaben des Verkäufers. Für Richtigkeit und Vollständigkeit übernimmt Lubrich Immobilien keine Gewähr. Die Courtage auf den Kaufpreis ist mit dem Abschluss des Kaufvertrages verdient und fällig. Lubrich Immobilien erhält einen unmittelbaren Zahlungsanspruch gegenüber den Käufer. Alle Angaben in diesem Exposé wurden sorgfältig und so vollständig wie möglich gemacht. Gleichwohl kann das Vorhandensein von Fehlern nicht ausgeschlossen werden. Bitte beachten Sie, dass unsere Grundrisse vom Maßstab abweichen können. Die Angaben in diesem Exposé erfolgen daher ohne jede Gewähr. Maßgeblich sind die im Kaufvertrag geschlossenen Vereinbarungen."
+        }
+      ],
+      "bilder": [
+        {
+          "datei": "bilder/immobilien/270/00.webp",
+          "klein": "bilder/immobilien/270/00-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/01.webp",
+          "klein": "bilder/immobilien/270/01-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/02.webp",
+          "klein": "bilder/immobilien/270/02-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/03.webp",
+          "klein": "bilder/immobilien/270/03-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/04.webp",
+          "klein": "bilder/immobilien/270/04-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/05.webp",
+          "klein": "bilder/immobilien/270/05-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/06.webp",
+          "klein": "bilder/immobilien/270/06-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/07.webp",
+          "klein": "bilder/immobilien/270/07-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/08.webp",
+          "klein": "bilder/immobilien/270/08-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/270/09.webp",
+          "klein": "bilder/immobilien/270/09-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1270
+        },
+        {
+          "datei": "bilder/immobilien/270/10.webp",
+          "klein": "bilder/immobilien/270/10-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "datei": "bilder/immobilien/270/11.webp",
+          "klein": "bilder/immobilien/270/11-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "datei": "bilder/immobilien/270/12.webp",
+          "klein": "bilder/immobilien/270/12-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "datei": "bilder/immobilien/270/13.webp",
+          "klein": "bilder/immobilien/270/13-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        }
+      ]
+    },
+    {
+      "id": "272",
+      "objektnr": "272",
+      "titel": "Einziehen und sofort wohlfühlen",
+      "slug": "einziehen-und-sofort-wohlfuehlen",
+      "objektart": "Haus",
+      "nutzungsart": "Wohnen",
+      "vermarktung": "Kauf",
+      "status": "aktiv",
+      "adresse": {
+        "strasse": "Am Großobringer Weg",
+        "plz": "99439",
+        "ort": "Wohlsborn"
+      },
+      "preise": {
+        "kaufpreis": 429000
+      },
+      "flaechen": {
+        "wohnflaeche": 109,
+        "grundstuecksflaeche": 615
+      },
+      "zimmer": 3,
+      "schlafzimmer": 2,
+      "badezimmer": 2,
+      "stellplaetze": 1,
+      "baujahr": 2016,
+      "ausstattung": [
+        {
+          "label": "Heizungsart",
+          "wert": "Fußbodenheizung"
+        },
+        {
+          "label": "Befeuerung",
+          "wert": "Luft-Wärmepumpe"
+        },
+        {
+          "label": "Terrasse",
+          "wert": "Ja"
+        }
+      ],
+      "energie": {
+        "art": "Verbrauchsausweis",
+        "gueltigBis": "05.07.2027",
+        "verbrauchskennwert": 28.0,
+        "energietraeger": "Elektro"
+      },
+      "texte": [
+        {
+          "titel": "Beschreibung der Ausstattung",
+          "text": "Das Objekt bietet eine variable Raumaufteilung mit vielen Nutzungsmöglichkeiten und hochwertigen Ausstattungsdetails wie z.B. Überwachungskameras und Außenrolladen. \n\n\n\nAus Diskretionsgründen werden wir nicht alle Details dieser Immobilie veröffentlichen. Weitere Angaben sowie diverse Bilder erhalten Sie gerne auf Anfrage."
+        },
+        {
+          "titel": "Lage",
+          "text": "Die Immobilie befindet sich in Wohlsborn, einem idyllischen Ortsteil der Landgemeinde Am Ettersberg im Landkreis Weimarer Land in Thüringen. Das kleine, charmante Dorf liegt am Höhenzug des Kleinen Ettersbergs und bietet eine ruhige, naturnahe Wohnlage mit hoher Lebensqualität.\n\n\n\nMit rund 500 Einwohnern bewahrt Wohlsborn seinen dörflichen Charakter und überzeugt durch eine freundliche Nachbarschaft sowie ein aktives Vereinsleben. Die grüne Umgebung, Streuobstwiesen und zahlreiche Spazier- und Radwege bieten ideale Voraussetzungen für Erholung und Freizeit in der Natur."
+        },
+        {
+          "titel": "Objektbeschreibung",
+          "text": "Dieses moderne und gemütliche Einfamilienhaus aus dem Jahr 2016 befindet sich in ruhiger Lage von Wohlsborn und überzeugt durch eine durchdachte Raumaufteilung sowie eine angenehme Wohnatmosphäre.\n\n\n\nAuf einer Wohnfläche von ca. 109 m² erwartet Sie ein gut geschnittenes Zuhause mit drei Zimmern, einer Küche, einem Badezimmer sowie einem separaten Gäste-WC mit zusätzlicher Dusche. Ein großzügiger Flur verbindet die Räume harmonisch miteinander und sorgt für ein offenes und einladendes Wohngefühl. Der Dachboden bietet darüber hinaus eine attraktive Ausbaureserve und eröffnet zusätzliche Möglichkeiten zur individuellen Gestaltung.\n\n\n\nDas ca. 615 m² große Grundstück lädt zum Entspannen und Verweilen ein. Besonders hervorzuheben ist die großzügige Terrasse mit Blick in den gepflegten Garten, auf der Sie den ganzen Tag über die Sonne genießen können – ideal für gemütliche Stunden im Freien, Grillabende oder entspannte Nachmittage.\n\n\n\nFür Ihre Fahrzeuge steht eine geräumige Garage mit Platz für zwei PKW zur Verfügung. Ergänzend befindet sich auf dem Grundstück ein weiterer Stellplatz.\n\n\n\nDieses gepflegte Zuhause bietet eine gelungene Kombination aus Komfort, Funktionalität und Wohlfühlcharakter – ideal für Paare oder kleine Familien.\n\n\n\nHaben wir Ihr Interesse geweckt?\n\n\n\nDann freuen wir uns auf Ihre Kontaktaufnahme!"
+        },
+        {
+          "titel": "Sonstige Angaben",
+          "text": "Bei Vertragsabschluss zahlt der Käufer der Immobilie die im Exposé angegebene Courtage vom Verkaufspreis, inkl. der gesetzlichen Mehrwertsteuer. Die Angaben beruhen auf Angaben des Verkäufers. Für Richtigkeit und Vollständigkeit übernimmt Lubrich Immobilien keine Gewähr. Die Courtage auf den Kaufpreis ist mit dem Abschluss des Kaufvertrages verdient und fällig. Lubrich Immobilien erhält einen unmittelbaren Zahlungsanspruch gegenüber den Käufer. Alle Angaben in diesem Exposé wurden sorgfältig und so vollständig wie möglich gemacht. Gleichwohl kann das Vorhandensein von Fehlern nicht ausgeschlossen werden. Bitte beachten Sie, dass unsere Grundrisse vom Maßstab abweichen können. Die Angaben in diesem Exposé erfolgen daher ohne jede Gewähr. Maßgeblich sind die im Kaufvertrag geschlossenen Vereinbarungen."
+        }
+      ],
+      "bilder": [
+        {
+          "datei": "bilder/immobilien/272/00.webp",
+          "klein": "bilder/immobilien/272/00-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/01.webp",
+          "klein": "bilder/immobilien/272/01-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/02.webp",
+          "klein": "bilder/immobilien/272/02-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/03.webp",
+          "klein": "bilder/immobilien/272/03-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/04.webp",
+          "klein": "bilder/immobilien/272/04-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/05.webp",
+          "klein": "bilder/immobilien/272/05-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/06.webp",
+          "klein": "bilder/immobilien/272/06-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/07.webp",
+          "klein": "bilder/immobilien/272/07-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/08.webp",
+          "klein": "bilder/immobilien/272/08-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/09.webp",
+          "klein": "bilder/immobilien/272/09-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/272/10.webp",
+          "klein": "bilder/immobilien/272/10-s.webp",
+          "titel": "",
+          "w": 1280,
+          "h": 960
+        },
+        {
+          "datei": "bilder/immobilien/272/11.webp",
+          "klein": "bilder/immobilien/272/11-s.webp",
+          "titel": "",
+          "w": 1280,
+          "h": 992
+        },
+        {
+          "datei": "bilder/immobilien/272/12.webp",
+          "klein": "bilder/immobilien/272/12-s.webp",
+          "titel": "",
+          "w": 1280,
+          "h": 979
+        },
+        {
+          "datei": "bilder/immobilien/272/13.webp",
+          "klein": "bilder/immobilien/272/13-s.webp",
+          "titel": "",
+          "w": 1600,
+          "h": 1200
+        },
+        {
+          "datei": "bilder/immobilien/272/14.webp",
+          "klein": "bilder/immobilien/272/14-s.webp",
+          "titel": "",
+          "w": 1430,
+          "h": 1351
+        }
+      ]
+    },
+    {
+      "id": "273",
+      "objektnr": "273",
+      "titel": "Modernes Wohnen mit Weitblick in Bad Berka",
+      "slug": "modernes-wohnen-mit-weitblick-in-bad-berka",
+      "objektart": "Haus",
+      "nutzungsart": "Wohnen",
+      "vermarktung": "Kauf",
+      "status": "aktiv",
+      "adresse": {
+        "strasse": null,
+        "plz": "99438",
+        "ort": "Bad Berka"
+      },
+      "preise": {},
+      "flaechen": {
+        "wohnflaeche": 130,
+        "grundstuecksflaeche": 1000
+      },
+      "zimmer": 4,
+      "schlafzimmer": 3,
+      "badezimmer": 2,
+      "stellplaetze": 3,
+      "baujahr": 2020,
+      "ausstattung": [
+        {
+          "label": "Heizungsart",
+          "wert": "Zentralheizung"
+        },
+        {
+          "label": "Befeuerung",
+          "wert": "Gas"
+        },
+        {
+          "label": "Terrasse",
+          "wert": "Ja"
+        }
+      ],
+      "energie": {
+        "energietraeger": "Gas"
+      },
+      "texte": [
+        {
+          "titel": "Lage",
+          "text": "Bad Berka zählt zu den beliebtesten Wohnorten der Region und vereint naturnahes Wohnen mit einer hervorragend entwickelten Infrastruktur. Die Kurstadt liegt idyllisch im mittleren Ilmtal und bietet mit ihren weitläufigen Grünflächen, dem Kurpark und der waldreichen Umgebung ein außergewöhnlich hohes Maß an Lebensqualität.\n\n\n\nGleichzeitig profitieren Bewohner von der Nähe zu den Städten Weimar und Erfurt, die beide in kurzer Fahrzeit erreichbar sind. Einkaufsmöglichkeiten, medizinische Versorgung – einschließlich der renommierten Zentralklinik –, Kindergärten, Schulen sowie zahlreiche Freizeit- und Erholungsangebote befinden sich direkt vor Ort.\n\n\n\nBad Berka ist geprägt von einem gepflegten, ruhigen Wohnumfeld und einer gewachsenen Nachbarschaft. Spazier- und Wanderwege, Radstrecken sowie vielfältige Kultur- und Wellnessangebote machen den Ort sowohl für Familien als auch für Berufspendler und Ruhesuchende besonders attraktiv.\n\n\n\nDie Kombination aus naturnaher Umgebung, guter Erreichbarkeit und lebenswertem Stadtbild macht Bad Berka zu einer der gefragtesten Wohnlagen im Weimarer Land."
+        },
+        {
+          "titel": "Objektbeschreibung",
+          "text": "Willkommen in Ihrem neuen Zuhause! \n\n\n\nDieses attraktive Einfamilienhaus aus dem Jahr 2020 überzeugt durch eine moderne Architektur, eine hochwertige Ausstattung und ein großzügiges Grundstück in schöner Aussichtslage von Bad Berka.\n\n\n\nAuf einer Wohnfläche von ca. 130 m² erwartet Sie ein durchdachtes Raumkonzept mit insgesamt vier Zimmern. Herzstück des Hauses ist der großzügige, offen gestaltete Wohn- und Essbereich, der mit viel Tageslicht und einem direkten Zugang zur großen Terrasse begeistert. Von hier aus genießen Sie einen herrlichen Blick über Bad Berka und die umliegende Landschaft.\n\n\n\nDrei gut geschnittene Schlafzimmer bieten ausreichend Platz für Familien, Paare oder das Arbeiten von zu Hause. Zwei moderne Badezimmer sorgen für zusätzlichen Wohnkomfort und erleichtern den Alltag.\n\n\n\nDas ca. 1.000 m² große Grundstück überzeugt durch seine Größe, Privatsphäre und eine eigene Zufahrt. Der Garten bietet vielfältige Gestaltungsmöglichkeiten und lädt zum Entspannen ein. Für zusätzliche Freizeitqualität ist bereits ein Pool geplant – die Beckenschale wurde bereits eingebracht und bildet die ideale Grundlage für die Fertigstellung Ihrer persönlichen Wohlfühloase.\n\n\n\nEin weiterer Pluspunkt ist das noch ausbaufähige Dachgeschoss, das zusätzliches Potenzial für Wohn-, Hobby- oder Arbeitsräume bietet und individuelle Nutzungsmöglichkeiten eröffnet.\n\n\n\nBeheizt wird die Immobilie über eine moderne Gasheizung. Die zeitgemäße Bauweise, die hochwertige Ausstattung sowie der sehr gepflegte Zustand machen dieses Haus zu einer attraktiven Immobilie für alle, die modernes Wohnen in einer der beliebtesten Wohnlagen Bad Berkas schätzen.\n\n\n\nÜberzeugen Sie sich selbst von diesem besonderen Angebot und vereinbaren Sie einen Besichtigungstermin."
+        },
+        {
+          "titel": "Sonstige Angaben",
+          "text": "Bei Vertragsabschluss zahlt der Käufer der Immobilie die im Exposé angegebene Courtage vom Verkaufspreis, inkl. der gesetzlichen Mehrwertsteuer. Die Angaben beruhen auf Angaben des Verkäufers. Für Richtigkeit und Vollständigkeit übernimmt Lubrich Immobilien keine Gewähr. Die Courtage auf den Kaufpreis ist mit dem Abschluss des Kaufvertrages verdient und fällig. Lubrich Immobilien erhält einen unmittelbaren Zahlungsanspruch gegenüber den Käufer. Alle Angaben in diesem Exposé wurden sorgfältig und so vollständig wie möglich gemacht. Gleichwohl kann das Vorhandensein von Fehlern nicht ausgeschlossen werden. Bitte beachten Sie, dass unsere Grundrisse vom Maßstab abweichen können. Die Angaben in diesem Exposé erfolgen daher ohne jede Gewähr. Maßgeblich sind die im Kaufvertrag geschlossenen Vereinbarungen."
+        }
+      ],
+      "bilder": [
+        {
+          "datei": "bilder/immobilien/273/00.webp",
+          "klein": "bilder/immobilien/273/00-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/01.webp",
+          "klein": "bilder/immobilien/273/01-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/02.webp",
+          "klein": "bilder/immobilien/273/02-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/03.webp",
+          "klein": "bilder/immobilien/273/03-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/04.webp",
+          "klein": "bilder/immobilien/273/04-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/05.webp",
+          "klein": "bilder/immobilien/273/05-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/06.webp",
+          "klein": "bilder/immobilien/273/06-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/07.webp",
+          "klein": "bilder/immobilien/273/07-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/08.webp",
+          "klein": "bilder/immobilien/273/08-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/09.webp",
+          "klein": "bilder/immobilien/273/09-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/10.webp",
+          "klein": "bilder/immobilien/273/10-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/11.webp",
+          "klein": "bilder/immobilien/273/11-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/273/12.webp",
+          "klein": "bilder/immobilien/273/12-s.webp",
+          "titel": "",
+          "w": 1280,
+          "h": 960
+        }
+      ]
+    },
+    {
+      "id": "276",
+      "objektnr": "276",
+      "titel": "Attraktive Kapitalanlage mit acht Wohneinheiten und soliden Mieteinnahmen",
+      "slug": "attraktive-kapitalanlage-mit-acht-wohneinheiten-und-soliden-mieteinnahmen",
+      "objektart": "Haus",
+      "nutzungsart": "Wohnen",
+      "vermarktung": "Kauf",
+      "status": "aktiv",
+      "adresse": {
+        "strasse": "Bahnhofstraße",
+        "plz": "99510",
+        "ort": "Apolda"
+      },
+      "preise": {
+        "kaufpreis": 869000
+      },
+      "flaechen": {
+        "wohnflaeche": 531,
+        "grundstuecksflaeche": 660
+      },
+      "zimmer": 21,
+      "schlafzimmer": null,
+      "badezimmer": null,
+      "stellplaetze": 8,
+      "baujahr": 1900,
+      "ausstattung": [
+        {
+          "label": "Heizungsart",
+          "wert": "Etagenwohnung"
+        },
+        {
+          "label": "Befeuerung",
+          "wert": "Gas"
+        },
+        {
+          "label": "Terrasse",
+          "wert": "2"
+        },
+        {
+          "label": "Balkon",
+          "wert": "6"
+        }
+      ],
+      "energie": {
+        "art": "Verbrauchsausweis",
+        "gueltigBis": "01.05.2027",
+        "verbrauchskennwert": 54.0,
+        "energietraeger": "Gas"
+      },
+      "texte": [
+        {
+          "titel": "Lage",
+          "text": "Apolda ist eine mittelgroße Stadt im Bundesland Thüringen und gehört zum Landkreis Weimarer Land. Die Stadt liegt verkehrsgünstig zwischen den Oberzentren Weimar und Jena sowie nur rund 20 Kilometer von der Landeshauptstadt Erfurt entfernt. Eingebettet in das Thüringer Becken bietet Apolda eine attraktive Kombination aus städtischer Infrastruktur, naturnahem Wohnen und kurzen Wegen zu den wichtigsten Wirtschafts- und Bildungsstandorten der Region.\n\n\n\nBesonders hervorzuheben ist die Nähe zur Universitäts- und Wissenschaftsstadt Jena, die in etwa 15 bis 20 Fahrminuten erreichbar ist. Jena zählt zu den wirtschaftlich stärksten Standorten Thüringens und ist international bekannt für Unternehmen wie Carl Zeiss, Jenoptik und Schott sowie die Friedrich-Schiller-Universität. Dadurch ist Apolda ein attraktiver Wohnort für Berufspendler, die die Vorteile einer ruhigeren Wohnlage mit den beruflichen Möglichkeiten eines dynamischen Wirtschaftsstandortes verbinden möchten.\n\n\n\nDie Stadt verfügt über eine hervorragende Verkehrsanbindung. Über die Bundesstraße 87 sind Jena, Weimar und Bad Sulza schnell erreichbar. Zudem bietet der Bahnhof Apolda regelmäßige Zugverbindungen in Richtung Jena, Weimar, Erfurt und Naumburg. Auch die Autobahnen A4 und A9 sind in kurzer Fahrzeit erreichbar und gewährleisten eine gute Anbindung an das überregionale Verkehrsnetz.\n\n\n\nNeben der guten Erreichbarkeit überzeugt Apolda durch eine gewachsene Infrastruktur mit Einkaufsmöglichkeiten, Schulen, Kindergärten, medizinischer Versorgung sowie vielfältigen Freizeit- und Kulturangeboten. Die Kombination aus bezahlbarem Wohnraum, einer guten Infrastruktur und der unmittelbaren Nähe zu den wirtschaftlichen Zentren Jena, Weimar und Erfurt macht Apolda zu einem gefragten Wohnstandort in Mittelthüringen."
+        },
+        {
+          "titel": "Objektbeschreibung",
+          "text": "Sie suchen eine solide Kapitalanlage mit nachhaltiger Vermietbarkeit und langfristiger Perspektive? Dann bietet dieses Mehrfamilienhaus in Apolda eine interessante Gelegenheit, Ihr Immobilienportfolio zu erweitern.\n\n\n\nAuf insgesamt ca. 531 m² Wohnfläche verteilen sich acht Wohneinheiten mit durchdachten Grundrissen und unterschiedlichen Wohnungsgrößen. Die Aufteilung spricht eine breite Zielgruppe an und schafft gute Voraussetzungen für eine nachhaltige Vermietung.\n\n\n\nEin besonderer Vorteil ist die im Jahr 2016 erfolgte umfassende Kernsanierung. Das Gebäude wurde grundlegend modernisiert und präsentiert sich in einem zeitgemäßen Zustand. Die Energieeffizienzklasse B unterstreicht die energetische Qualität der Immobilie und stellt einen zusätzlichen Pluspunkt für Eigentümer und Mieter dar.\n\n\n\nAuch die Ausstattung überzeugt: Zwei Erdgeschosswohnungen verfügen jeweils über eine eigene Terrasse, während die sechs weiteren Wohnungen mit Balkonen ausgestattet sind. Acht direkt am Gebäude gelegene Stellplätze sorgen dafür, dass jeder Wohneinheit ein eigener Pkw-Stellplatz zur Verfügung steht.\n\n\n\nDie Kombination aus acht Wohneinheiten, umfassender Sanierung, guter Energieeffizienz und attraktiver Ausstattung bietet eine überzeugende Grundlage für ein langfristiges Immobilieninvestment. Gleichzeitig sorgt die Verteilung auf mehrere Wohneinheiten für eine breite Streuung der Mieteinnahmen.\n\n\n\nOb als langfristige Bestandsinvestition oder zur Erweiterung eines bestehenden Immobilienportfolios – dieses Mehrfamilienhaus bietet eine interessante Kombination aus Substanz, Vermietbarkeit und nachhaltigem Ertragspotenzial.\n\n\n\nNutzen Sie die Gelegenheit und investieren Sie in eine bereits umfassend modernisierte Immobilie in Apolda.\n\n\n\nHaben wir Ihr Interesse geweckt? Gerne stellen wir Ihnen weitere Objektunterlagen zur Verfügung und vereinbaren einen persönlichen Besichtigungstermin. Wir freuen uns auf Ihre Kontaktaufnahme!"
+        },
+        {
+          "titel": "Sonstige Angaben",
+          "text": "Bei Vertragsabschluss zahlt der Käufer der Immobilie die im Exposé angegebene Courtage vom Verkaufspreis, inkl. der gesetzlichen Mehrwertsteuer. Die Angaben beruhen auf Angaben des Verkäufers. Für Richtigkeit und Vollständigkeit übernimmt Lubrich Immobilien keine Gewähr. Die Courtage auf den Kaufpreis ist mit dem Abschluss des Kaufvertrages verdient und fällig. Lubrich Immobilien erhält einen unmittelbaren Zahlungsanspruch gegenüber den Käufer. Alle Angaben in diesem Exposé wurden sorgfältig und so vollständig wie möglich gemacht. Gleichwohl kann das Vorhandensein von Fehlern nicht ausgeschlossen werden. Bitte beachten Sie, dass unsere Grundrisse vom Maßstab abweichen können. Die Angaben in diesem Exposé erfolgen daher ohne jede Gewähr. Maßgeblich sind die im Kaufvertrag geschlossenen Vereinbarungen."
+        }
+      ],
+      "bilder": [
+        {
+          "datei": "bilder/immobilien/276/00.webp",
+          "klein": "bilder/immobilien/276/00-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/276/01.webp",
+          "klein": "bilder/immobilien/276/01-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/276/02.webp",
+          "klein": "bilder/immobilien/276/02-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/276/03.webp",
+          "klein": "bilder/immobilien/276/03-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/276/04.webp",
+          "klein": "bilder/immobilien/276/04-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/276/05.webp",
+          "klein": "bilder/immobilien/276/05-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        }
+      ]
+    },
+    {
+      "id": "277",
+      "objektnr": "277",
+      "titel": "Komfortables Wohnen mit hochwertiger Ausstattung",
+      "slug": "komfortables-wohnen-mit-hochwertiger-ausstattung",
+      "objektart": "Wohnung",
+      "nutzungsart": "Wohnen",
+      "vermarktung": "Miete",
+      "status": "aktiv",
+      "adresse": {
+        "strasse": "Käthe-Kollwitz-Straße",
+        "plz": "99510",
+        "ort": "Apolda"
+      },
+      "preise": {
+        "kaltmiete": 880,
+        "warmmiete": 1295,
+        "nebenkosten": 365,
+        "kaution": 1760
+      },
+      "flaechen": {
+        "wohnflaeche": 100
+      },
+      "zimmer": 3,
+      "schlafzimmer": null,
+      "badezimmer": 1,
+      "stellplaetze": 1,
+      "baujahr": 2023,
+      "ausstattung": [
+        {
+          "label": "Terrasse",
+          "wert": "Ja"
+        }
+      ],
+      "energie": {
+        "art": "Verbrauchsausweis",
+        "gueltigBis": "24.03.2033",
+        "verbrauchskennwert": 19.8,
+        "energietraeger": "Luft-Wärmepumpe"
+      },
+      "texte": [
+        {
+          "titel": "Lage",
+          "text": "Die angebotene Immobilie befindet sich in Apolda, der Kreisstadt des Weimarer Landes in Thüringen. Die Stadt liegt verkehrsgünstig im Städtedreieck Weimar – Jena – Naumburg und verfügt über eine gute Anbindung an die Bundesstraße B87 sowie die nahegelegene Autobahn A4. Der Bahnhof Apolda bietet regelmäßige Verbindungen in Richtung Erfurt, Weimar und Jena.\n\n\n\nApolda verfügt über eine gewachsene Infrastruktur mit Einkaufsmöglichkeiten, Schulen, Kindergärten, medizinischer Versorgung sowie vielfältigen Freizeit- und Erholungsangeboten. Die Kombination aus ruhigem Wohnen und guter Erreichbarkeit der umliegenden Wirtschaftszentren macht den Standort sowohl für Eigennutzer als auch für Kapitalanleger attraktiv."
+        },
+        {
+          "titel": "Objektbeschreibung",
+          "text": "Diese attraktive 3-Raum-Wohnung vereint modernes Wohnen, eine hochwertige Ausstattung und ein angenehmes Wohngefühl. Mit großzügigen Räumen, einer durchdachten Grundrissgestaltung und einer schönen Dachterrasse bietet sie ein Zuhause, das Komfort und Wohnqualität auf besondere Weise verbindet.\n\n\n\nDas Herzstück der Wohnung ist der lichtdurchflutete Wohnbereich mit direktem Zugang zur Dachterrasse. Diese erweitert den Wohnraum auf angenehme Weise und bietet zusätzlichen Platz zum Entspannen und Verweilen.\n\n\n\nDie insgesamt drei großzügig geschnittenen Zimmer bieten vielfältige Nutzungsmöglichkeiten, ob als Wohn-, Schlaf-, Kinder- oder Arbeitszimmer. Sämtliche Räume präsentieren sich in einem neuwertigen und äußerst gepflegten Zustand und überzeugen mit einer modernen, hochwertigen Ausstattung.\n\n\n\nFür zusätzlichen Komfort sorgt das stilvoll ausgestattete Badezimmer, das den hochwertigen Gesamteindruck der Wohnung abrundet.\n\n\n\nDiese attraktive Wohnung verbindet großzügiges Wohnen mit einer modernen Ausstattung und einer durchdachten Raumaufteilung – eine ideale Gelegenheit für alle, die Wert auf Komfort und ein besonderes Wohngefühl legen.\n\n\n\nAus Rücksicht auf die Privatsphäre der derzeitigen Mieter werden keine Innenaufnahmen der Wohnung veröffentlicht."
+        },
+        {
+          "titel": "Sonstige Angaben",
+          "text": "Alle Angaben in diesem Exposé wurden sorgfältig und so vollständig wie möglich gemacht. Die Angaben beruhen auf Angaben des Eigentümers. Für Richtigkeit und Vollständigkeit übernimmt Lubrich Immobilien keine Gewähr. Gleichwohl kann das Vorhandensein von Fehlern nicht ausgeschlossen werden."
+        }
+      ],
+      "bilder": [
+        {
+          "datei": "bilder/immobilien/277/00.webp",
+          "klein": "bilder/immobilien/277/00-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/277/01.webp",
+          "klein": "bilder/immobilien/277/01-s.webp",
+          "titel": "",
+          "w": 711,
+          "h": 623
+        }
+      ]
+    },
+    {
+      "id": "278",
+      "objektnr": "278",
+      "titel": "Offenes Wohnkonzept mit Balkon – attraktive Dachgeschosswohnung",
+      "slug": "offenes-wohnkonzept-mit-balkon-attraktive-dachgeschosswohnung",
+      "objektart": "Wohnung",
+      "nutzungsart": "Wohnen",
+      "vermarktung": "Miete",
+      "status": "aktiv",
+      "adresse": {
+        "strasse": "Bergstraße",
+        "plz": "99510",
+        "ort": "Apolda"
+      },
+      "preise": {
+        "kaltmiete": 680,
+        "warmmiete": 900,
+        "nebenkosten": 220,
+        "kaution": 1360
+      },
+      "flaechen": {
+        "wohnflaeche": 85
+      },
+      "zimmer": 3,
+      "schlafzimmer": null,
+      "badezimmer": 1,
+      "stellplaetze": null,
+      "baujahr": null,
+      "ausstattung": [
+        {
+          "label": "Heizungsart",
+          "wert": "Zentralheizung"
+        },
+        {
+          "label": "Befeuerung",
+          "wert": "Gas"
+        },
+        {
+          "label": "Balkon",
+          "wert": "Ja"
+        }
+      ],
+      "energie": {
+        "energietraeger": "Gas"
+      },
+      "texte": [
+        {
+          "titel": "Lage",
+          "text": "Die angebotene Immobilie befindet sich in Apolda, der Kreisstadt des Weimarer Landes in Thüringen. Die Stadt liegt verkehrsgünstig im Städtedreieck Weimar – Jena – Naumburg und verfügt über eine gute Anbindung an die Bundesstraße B87 sowie die nahegelegene Autobahn A4. Der Bahnhof Apolda bietet regelmäßige Verbindungen in Richtung Erfurt, Weimar und Jena.\n\n\n\nApolda verfügt über eine gewachsene Infrastruktur mit Einkaufsmöglichkeiten, Schulen, Kindergärten, medizinischer Versorgung sowie vielfältigen Freizeit- und Erholungsangeboten. Die Kombination aus ruhigem Wohnen und guter Erreichbarkeit der umliegenden Wirtschaftszentren macht den Standort sowohl für Eigennutzer als auch für Kapitalanleger attraktiv."
+        },
+        {
+          "titel": "Objektbeschreibung",
+          "text": "Diese gemütliche Dachgeschosswohnung bietet ein modernes Wohnkonzept mit einer angenehmen Atmosphäre und einer attraktiven Raumaufteilung. Auf drei Zimmern erwartet Sie ein Zuhause, das Funktionalität und Wohnkomfort harmonisch miteinander verbindet.\n\n\n\nBesonders einladend präsentiert sich der offene Wohn- und Essbereich, der den Mittelpunkt der Wohnung bildet. Durch die offene Gestaltung entsteht ein großzügiges Raumgefühl, das zum gemeinsamen Kochen, Essen und Entspannen einlädt. Der angrenzende Balkon bietet zusätzlichen Freiraum und erweitert den Wohnbereich ins Freie.\n\n\n\nNeben dem Wohn- und Essbereich verfügt die Wohnung über zwei weitere Zimmer, die sich ganz nach Ihren persönlichen Bedürfnissen gestalten lassen. Ob als gemütliches Schlafzimmer, Kinderzimmer oder Homeoffice – hier stehen Ihnen verschiedene Nutzungsmöglichkeiten offen.\n\n\n\nDie Dachgeschosslage verleiht der Wohnung einen besonderen Charme und macht sie zu einem attraktiven Zuhause für Paare, kleine Familien oder Singles mit Platzbedarf.\n\n\n\nEine schöne Gelegenheit für alle, die eine Wohnung mit offenem Wohnkonzept und Balkon suchen.\n\n\n\nAus Rücksicht auf die Privatsphäre der derzeitigen Mieter werden keine Innenaufnahmen der Wohnung veröffentlicht."
+        },
+        {
+          "titel": "Sonstige Angaben",
+          "text": "Alle Angaben in diesem Exposé wurden sorgfältig und so vollständig wie möglich gemacht. Die Angaben beruhen auf Angaben des Eigentümers. Für Richtigkeit und Vollständigkeit übernimmt Lubrich Immobilien keine Gewähr. Gleichwohl kann das Vorhandensein von Fehlern nicht ausgeschlossen werden."
+        }
+      ],
+      "bilder": [
+        {
+          "datei": "bilder/immobilien/278/00.webp",
+          "klein": "bilder/immobilien/278/00-s.webp",
+          "titel": "",
+          "w": 1200,
+          "h": 1600
+        },
+        {
+          "datei": "bilder/immobilien/278/01.webp",
+          "klein": "bilder/immobilien/278/01-s.webp",
+          "titel": "",
+          "w": 568,
+          "h": 853
+        }
+      ]
+    }
+  ]
+}

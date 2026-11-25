@@ -1,0 +1,113 @@
+<!-- {
+  "pfad": "",
+  "titel": "Immobilienmakler Bad Berka & Weimarer Land | Lubrich Immobilien",
+  "beschreibung": "Lubrich Immobilien aus Bad Berka: kostenlose Wertermittlung, Verkauf und Vermietung von Häusern, Wohnungen und Grundstücken in Weimar, Bad Berka und im Weimarer Land.",
+  "klasse": "start",
+  "jsonld": "firma"
+} -->
+<section class="buehne" aria-labelledby="buehne-titel">
+  <div class="rahmen buehne__raster">
+    <div class="buehne__text">
+      <h1 id="buehne-titel">Immobilienmakler in Bad Berka und im Weimarer Land</h1>
+      <p class="buehne__lead">Wir bewerten, verkaufen und vermieten Häuser, Wohnungen und Grundstücke. Sie haben einen festen Ansprechpartner – von der ersten Besichtigung bis zum Notartermin.</p>
+      <p class="buehne__kontakt">
+        <a href="tel:{{telefonLink}}">{{icon:telefon}}{{telefon}}</a>
+        <a href="{{root}}immobilien/">{{objekte:anzahl-text}} ansehen</a>
+      </p>
+    </div>
+    <div class="buehne__karte">
+      <svg class="buehne__dach" viewBox="0 0 600 130" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M6 128 L282 14" />
+        <path d="M330 0 V14 M330 30 V128" />
+        <path d="M368 46 L594 128" />
+      </svg>
+      <h2>Was ist Ihre Immobilie wert?</h2>
+      {{bewertung:start}}
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="angebote-titel">
+  <div class="rahmen">
+    <div class="abschnitt__kopf">
+      <h2 id="angebote-titel">Aktuelle Angebote</h2>
+      <a class="textlink" href="{{root}}immobilien/">Alle {{objekte:anzahl}} Immobilien</a>
+    </div>
+    {{objekte:neueste}}
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--kalk" aria-labelledby="ablauf-titel">
+  <div class="rahmen ablauf">
+    <div class="ablauf__intro">
+      <h2 id="ablauf-titel">So verkaufen wir Ihre Immobilie</h2>
+      <p>Ein Verkauf ist für die meisten Eigentümer eine einmalige Sache. Wir nehmen Ihnen die Arbeit ab und erklären jeden Schritt, bevor er passiert.</p>
+      <a class="knopf" href="{{root}}leistungen/">Alle Leistungen</a>
+    </div>
+    <ol class="schritte">
+      <li><h3>Bewertung vor Ort</h3><p>Wir sehen uns Ihre Immobilie an, prüfen Lage, Zustand und Unterlagen und nennen Ihnen einen realistischen Angebotspreis.</p></li>
+      <li><h3>Exposé und Vermarktung</h3><p>Ein verkaufsförderndes Exposé, regionale Anzeigen und gezielte Vermarktung über die großen Online-Portale.</p></li>
+      <li><h3>Besichtigungen</h3><p>Wir führen die Besichtigungen und Verkaufsgespräche mit den Interessenten und beantworten alle Fragen.</p></li>
+      <li><h3>Unterlagen und Notar</h3><p>Wir kümmern uns um die nötigen Dokumente und sorgen für einen reibungslosen Ablauf bis zum Notartermin.</p></li>
+      <li><h3>Schlüsselübergabe</h3><p>Bis die Schlüssel bei den neuen Eigentümern sind, bleiben wir Ihr Ansprechpartner.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="anliegen-titel">
+  <div class="rahmen">
+    <h2 id="anliegen-titel">Wobei wir Ihnen helfen</h2>
+    <div class="anliegen">
+      <a class="anliegen__feld" href="{{root}}immobilienbewertung/">
+        <h3>Verkaufen</h3>
+        <p>Sie möchten Ihr Haus, Ihre Wohnung oder Ihr Grundstück verkaufen und wissen, was es wert ist.</p>
+        <span class="textlink">Wert ermitteln lassen</span>
+      </a>
+      <a class="anliegen__feld" href="{{root}}leistungen/#vermietung">
+        <h3>Vermieten</h3>
+        <p>Wir finden zuverlässige Mieter, prüfen die Bonität und erledigen alles bis zur Wohnungsübergabe.</p>
+        <span class="textlink">Vermietung ansehen</span>
+      </a>
+      <a class="anliegen__feld" href="{{root}}kontakt/#suche">
+        <h3>Kaufen oder mieten</h3>
+        <p>Sagen Sie uns, was Sie suchen. Wir melden uns, sobald ein passendes Objekt in die Vermarktung geht.</p>
+        <span class="textlink">Suchauftrag anlegen</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--blau" aria-labelledby="person-titel">
+  <div class="rahmen persoenlich">
+    <div>
+      <h2 id="person-titel">Kompetenz mit Nähe und Service</h2>
+      <p>Seit 2023 sind wir in Bad Berka und den umliegenden Orten für unsere Kunden da. Als regional verwurzeltes Maklerbüro kennen wir die Besonderheiten des Immobilienmarkts vor Ort und wissen, worauf es beim Kauf, Verkauf und bei der Vermietung ankommt.</p>
+      <p>Bei uns bekommen Sie klare Informationen, ehrliches Feedback und einen Ansprechpartner, der erreichbar ist.</p>
+      <a class="textlink textlink--hell" href="{{root}}ueber-uns/">Mehr über uns</a>
+    </div>
+    {{ansprechpartner}}
+  </div>
+</section>
+
+<section class="abschnitt" aria-labelledby="region-titel-h">
+  <div class="rahmen zwei-spalten zwei-spalten--mitte">
+    <div>
+      <h2 id="region-titel-h">Zu Hause im Weimarer Land</h2>
+      <p>Von unserem Büro in Bad Berka sind wir schnell bei Ihnen – in Weimar, Blankenhain, Kranichfeld, Magdala, Grammetal, Klettbach und überall dazwischen.</p>
+      <ul class="ortsliste">{{region:liste}}</ul>
+    </div>
+    {{region:karte}}
+  </div>
+</section>
+
+<section class="abschnitt abschnitt--kalk" aria-labelledby="stimmen-titel">
+  <div class="rahmen">
+    <div class="abschnitt__kopf">
+      <h2 id="stimmen-titel">Das sagen unsere Kunden</h2>
+      <a class="textlink" href="{{root}}ueber-uns/kundenstimmen/">Alle Kundenstimmen</a>
+    </div>
+    {{stimmen}}
+  </div>
+</section>
+
+{{kontakt:band}}

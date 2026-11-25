@@ -1,0 +1,20 @@
+{
+  "name": "lubrichimmobilien.de",
+  "private": true,
+  "type": "module",
+  "description": "Website von Lubrich Immobilien – statisch generiert für GitHub Pages, Inserate aus onOffice",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "sync:onoffice": "node scripts/sync-onoffice.mjs && node scripts/build.mjs",
+    "import:openimmo": "node scripts/import-openimmo.mjs && node scripts/build.mjs",
+    "serve": "npx --yes http-server -c-1 -p 8080 ."
+  },
+  "optionalDependencies": {
+    "fast-xml-parser": "^4.5.0",
+    "sharp": "^0.33.5",
+    "unzipper": "^0.12.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

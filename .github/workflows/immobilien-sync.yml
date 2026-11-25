@@ -1,0 +1,71 @@
+# Holt die Inserate aus onOffice, baut die Website neu und committet die Änderungen nach main.
+# GitHub Pages veröffentlicht den neuen Stand danach automatisch.
+#
+# Einrichtung: Settings → Secrets and variables → Actions → „New repository secret“
+#   ONOFFICE_TOKEN, ONOFFICE_SECRET   (empfohlen: onOffice-API)
+#   oder OPENIMMO_FTP_URL             (Alternative: OpenImmo-Export per FTP, z. B. ftp://benutzer:passwort@server/openimmo/)
+name: Immobilien aktualisieren
+
+on:
+  schedule:
+    - cron: '17 5-20 * * *'     # stündlich zwischen 6 und 21 Uhr (deutsche Zeit, UTC+1)
+  workflow_dispatch:             # „Run workflow“-Knopf im Actions-Tab
+  repository_dispatch:
+    types: [onoffice-update]     # für einen späteren Webhook: sofort aktualisieren
+  push:
+    branches: [main]
+    paths: ['src/**', 'scripts/**', 'data/**', 'assets/**', 'package.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: immobilien-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ONOFFICE_TOKEN: ${{ secrets.ONOFFICE_TOKEN }}
+      ONOFFICE_SECRET: ${{ secrets.ONOFFICE_SECRET }}
+      OPENIMMO_FTP_URL: ${{ secrets.OPENIMMO_FTP_URL }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Inserate aus onOffice (API)
+        if: github.event_name != 'push' && env.ONOFFICE_TOKEN != ''
+        run: node scripts/sync-onoffice.mjs
+
+      - name: Inserate aus OpenImmo-Export (FTP)
+        if: github.event_name != 'push' && env.ONOFFICE_TOKEN == '' && env.OPENIMMO_FTP_URL != ''
+        run: |
+          set -euo pipefail
+          url="${OPENIMMO_FTP_URL%/}/"
+          datei=$(curl -sS --list-only "$url" | grep -i '\.zip$' | sort | tail -n 1 || true)
+          if [ -z "$datei" ]; then echo "Kein neuer OpenImmo-Export auf dem FTP – nichts zu tun."; exit 0; fi
+          echo "Importiere $datei"
+          curl -sS -o /tmp/openimmo.zip "$url$datei"
+          node scripts/import-openimmo.mjs /tmp/openimmo.zip
+
+      - name: Website bauen
+        run: node scripts/build.mjs
+
+      - name: Änderungen speichern
+        run: |
+          git config user.name "immobilien-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "Keine Änderungen."; exit 0; fi
+          git commit -m "Inserate/Website aktualisiert ($(date -u +'%Y-%m-%d %H:%M') UTC)"
+          git push

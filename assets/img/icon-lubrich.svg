@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="114.43339mm"
+   height="98.432777mm"
+   viewBox="0 0 114.43339 98.432778"
+   version="1.1"
+   id="svg1017"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="icon-lubrich-immo.svg">
+  <defs
+     id="defs1011" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="263.14442"
+     inkscape:cy="374.89209"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g1600"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1014">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(48.081799,131.61115)">
+    <g
+       id="g1600">
+      <path
+         style="fill:#003460;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M -47.829315,-88.521862 C -28.867244,-101.30979 9.434077,-127.07543 9.434077,-127.07543 l 16.252976,11.71726 0.188989,14.17411 -17.1979166,-11.71727 -56.7599244,38.220346 z"
+         id="path842" />
+      <path
+         style="fill:#003460;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 27.95491,-131.61115 14.741073,9.07143 -0.377976,7.74851 -14.174108,-9.4494 z"
+         id="path844" />
+      <path
+         style="fill:#003460;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -21.559968,-88.332873 15.2188381,-10.123752 v 52.23933 H 20.4982 v 13.038921 h -42.07933 z"
+         id="path846" />
+      <path
+         style="fill:#003460;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 28.1182,-33.178744 0.214302,-88.404176 13.964833,9.35443 0.214193,79.049746 z"
+         id="path848" />
+      <path
+         style="fill:#003460;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 44.569124,-102.40633 21.733745,13.874065 0.04872,14.456505 -21.648832,-14.699824 z"
+         id="path850" />
+    </g>
+  </g>
+</svg>

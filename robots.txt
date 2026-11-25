@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /scripts/
+Disallow: /serverless/
+
+Sitemap: https://www.lubrichimmobilien.de/sitemap.xml
