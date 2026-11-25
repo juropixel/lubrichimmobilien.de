@@ -209,6 +209,7 @@ function objektKarte(o, r, { ueberschrift = 'h3' } = {}) {
   <a class="karte__link" href="${r}${objektPfad(o)}">
     <div class="karte__bild">${b ? `<img src="${r}${b.klein || b.datei}" alt="${esc(b.titel || o.titel)}" width="${b.w || 800}" height="${b.h || 600}" loading="lazy" decoding="async">` : '<span class="karte__ohnebild">Bilder auf Anfrage</span>'}
       <span class="karte__typ">${esc(typ)}</span>${o.status === 'reserviert' ? '<span class="karte__status">Reserviert</span>' : ''}</div>
+    ${o.flaechen?.wohnflaeche || o.flaechen?.grundstuecksflaeche ? `<span class="karte__mass" aria-hidden="true"><span>${o.flaechen?.wohnflaeche ? `${flaeche(o.flaechen.wohnflaeche)} Wohnfläche` : `${flaeche(o.flaechen.grundstuecksflaeche)} Grundstück`}</span></span>` : ''}
     <div class="karte__text">
       <p class="karte__ort">${icon.pin}${esc(o.adresse?.plz || '')} ${esc(o.adresse?.ort || '')}</p>
       <${H} class="karte__titel">${esc(o.titel)}</${H}>
@@ -627,7 +628,7 @@ function seite404() {
   const b = config.basePath.endsWith('/') ? config.basePath : config.basePath + '/';
   const inhalt = `<section class="seitenkopf"><div class="rahmen"><h1>Diese Seite gibt es nicht (mehr).</h1>
 <p class="seitenkopf__text">Vielleicht ist das Objekt bereits vermittelt. Hier geht es weiter:</p>
-<p class="knopfreihe"><a class="knopf knopf--gold" href="${b}immobilien/">Aktuelle Immobilien</a> <a class="knopf knopf--rand-hell" href="${b}">Zur Startseite</a></p></div></section>`;
+<p class="knopfreihe"><a class="knopf knopf--gold" href="${b}immobilien/">Aktuelle Immobilien</a> <a class="knopf knopf--hell" href="${b}">Zur Startseite</a></p></div></section>`;
   schreibe('404.html', layout({ pfad: '404.html', titel: 'Seite nicht gefunden | Lubrich Immobilien', beschreibung: 'Diese Seite wurde nicht gefunden.', inhalt, basis: b }).replace('<meta name="description"', '<meta name="robots" content="noindex">\n<meta name="description"'));
 }
 
