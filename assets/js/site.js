@@ -138,6 +138,117 @@
     ordnen();
   }
 
+  /* ------------------------------------------------------------ Goldener Faden (Startseite)
+     Eine feine Linie zeichnet sich beim Scrollen: vom Kartenstapel durch den Verkaufsablauf
+     bis zum Kontaktbereich, wo sie das Dach aus dem Logo bildet. */
+  const ablaufSchritte = $$('.start .schritte li');
+  const kontaktBand = $('.start .band--nacht');
+  if (ablaufSchritte.length && kontaktBand) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const main = $('#inhalt');
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('class', 'faden'); svg.setAttribute('aria-hidden', 'true');
+    const linie = document.createElementNS(NS, 'path'); linie.setAttribute('class', 'faden__linie');
+    const dach = document.createElementNS(NS, 'path'); dach.setAttribute('class', 'faden__dach');
+    const spitze = document.createElementNS(NS, 'circle'); spitze.setAttribute('class', 'faden__spitze'); spitze.setAttribute('r', '4');
+    svg.append(linie, dach, spitze);
+    main.appendChild(svg);
+    const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let proben = [], laenge = 0, dachLaenge = 0, dachStart = 0, kreise = [], bereit = false;
+
+    const messen = () => {
+      const mr = main.getBoundingClientRect();
+      const oy = mr.top + window.scrollY, ox = mr.left;
+      const pos = (el) => { const r = el.getBoundingClientRect(); return { x: r.left - ox, y: r.top + window.scrollY - oy, w: r.width, h: r.height }; };
+      const W = main.clientWidth, H = main.offsetHeight;
+      svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+      const rahmen = $('.ablauf');
+      const rp = pos(rahmen);
+      const innenLinks = rp.x + parseFloat(getComputedStyle(rahmen).paddingLeft);
+      const randX = Math.max(10, innenLinks - 40);
+
+      // Start: unter dem Kamin der obersten Karte, unterhalb der Steuerung
+      // offsetLeft/-Width ignorieren Transformationen (Karten können gerade animiert werden)
+      const karte = $('.giebelkarte');
+      const liste = $('.stapel__karten');
+      const steuer = $('.stapel__steuerung');
+      const sp = steuer ? pos(steuer) : pos($('.start-buehne'));
+      const sx = karte && liste ? pos(liste).x + karte.offsetLeft + karte.offsetWidth * 0.6575 : randX;
+      const sy = sp.y + sp.h + 22;
+
+      kreise = ablaufSchritte.map((li) => { const p = pos(li); return { li, x: p.x + 24, y: p.y + 20.8 }; });
+      const ax = kreise[0].x, y1 = kreise[0].y, yN = kreise[kreise.length - 1].y;
+
+      const bp = pos(kontaktBand), hp = pos($('h2', kontaktBand));
+      const yb = hp.y - 16, xl = hp.x;
+
+      const d = [
+        `M${sx} ${sy}`,
+        `C${sx} ${sy + 120} ${ax} ${y1 - 150} ${ax} ${y1}`,
+        `L${ax} ${yN}`,
+        `C${ax} ${yN + 160} ${randX} ${yN + 80} ${randX} ${yN + 260}`,
+        `L${randX} ${yb - 26}`
+      ].join(' ');
+      linie.setAttribute('d', d);
+
+      // Dach wie im Logo: linke Schräge, Lücke, Kamin mit Punkt, rechte Schräge
+      // Die Linie steigt vom Rand direkt als Dachschräge auf (Proportionen wie im Logo)
+      const x0 = randX, Wd = Math.min(240, Math.max(150, (xl - x0) + hp.w * 0.28)), Hd = Wd * 0.3;
+      const kx = x0 + Wd * 0.585;
+      dach.setAttribute('d', [
+        // weicher Bogen aus der Senkrechten in die Dachschräge
+        `M${x0} ${yb - 26} Q${x0} ${yb} ${x0 + 16} ${yb - 16 * Hd / (Wd * 0.47)} L${x0 + Wd * 0.47} ${yb - Hd}`,
+        `M${kx} ${yb - Hd - 18} L${kx} ${yb - Hd - 9}`,
+        `M${kx} ${yb - Hd + 2} L${kx} ${yb - 2}`,
+        `M${x0 + Wd * 0.655} ${yb - Hd + 12} L${x0 + Wd} ${yb}`
+      ].join(' '));
+      dachStart = yb - 40;
+
+      laenge = linie.getTotalLength();
+      dachLaenge = dach.getTotalLength();
+      linie.style.strokeDasharray = laenge; dach.style.strokeDasharray = dachLaenge;
+      // Proben entlang der Linie: Länge → größte bisher erreichte Höhe (y)
+      proben = []; let maxY = -Infinity;
+      for (let i = 0; i <= 400; i++) {
+        const l = (laenge * i) / 400, p = linie.getPointAtLength(l);
+        maxY = Math.max(maxY, p.y); proben.push({ l, y: maxY });
+      }
+      bereit = true;
+      zeichnen();
+    };
+
+    const zeichnen = () => {
+      if (!bereit) return;
+      const mr = main.getBoundingClientRect();
+      const ziel = ruhig ? Infinity : window.innerHeight * 0.62 - mr.top;
+      // Länge suchen, bei der die Linie die Zielhöhe erreicht
+      let lo = 0, hi = proben.length - 1;
+      if (ziel <= proben[0].y) hi = 0;
+      else if (ziel >= proben[hi].y) lo = hi;
+      else { while (hi - lo > 1) { const m = (lo + hi) >> 1; if (proben[m].y < ziel) lo = m; else hi = m; } }
+      const l = ziel >= proben[proben.length - 1].y ? laenge : proben[hi === 0 ? 0 : lo].l;
+      linie.style.strokeDashoffset = laenge - l;
+      const t = Math.min(1, Math.max(0, (ziel - dachStart) / 220));
+      dach.style.strokeDashoffset = dachLaenge * (1 - t);
+      // Stiftspitze am Ende der gezeichneten Linie
+      const p = t > 0 ? dach.getPointAtLength(dachLaenge * t) : linie.getPointAtLength(l);
+      spitze.setAttribute('cx', p.x.toFixed(1)); spitze.setAttribute('cy', p.y.toFixed(1));
+      spitze.classList.toggle('ist-sichtbar', l > 2 && t < 1 && !ruhig);
+      kreise.forEach((k) => k.li.classList.toggle('erreicht', ziel >= k.y));
+    };
+
+    let anfrage = 0;
+    const planen = () => { if (!anfrage) anfrage = requestAnimationFrame(() => { anfrage = 0; zeichnen(); }); };
+    window.addEventListener('scroll', planen, { passive: true });
+    let mt = 0;
+    const neuMessen = () => { clearTimeout(mt); mt = setTimeout(messen, 120); };
+    window.addEventListener('resize', neuMessen);
+    if ('ResizeObserver' in window) new ResizeObserver(neuMessen).observe(main);
+    (document.fonts?.ready || Promise.resolve()).then(messen);
+    window.addEventListener('load', messen);
+  }
+
   /* ------------------------------------------------------------ Filter Immobilien */
   const filter = $('[data-filter]');
   if (filter) {
