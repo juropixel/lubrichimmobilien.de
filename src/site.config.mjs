@@ -7,7 +7,7 @@ export default {
 
   // Wird nur für die 404-Seite gebraucht, weil GitHub Pages sie unter beliebigen Pfaden ausliefert.
   // Eigene Domain: '/'. Ohne eigene Domain (juropixel.github.io/lubrichimmobilien.de/): '/lubrichimmobilien.de/'
-  basePath: '/',
+  basePath: '/lubrichimmobilien.de/',
 
   firma: {
     name: 'Lubrich Immobilien',
