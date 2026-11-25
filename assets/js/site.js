@@ -20,9 +20,14 @@
   }
 
   /* ------------------------------------------------------------ Intro (nur Startseite, einmal pro Besuch) */
-  const plan = $('.plan');
+  const stapel = $('[data-stapel]');
   const intro = $('#intro');
-  const planLos = () => plan && plan.classList.add('plan--los');
+  // Karten austeilen; danach normale Übergänge ohne Verzögerung
+  const planLos = () => {
+    if (!stapel || stapel.classList.contains('stapel--los')) return;
+    stapel.classList.add('stapel--los');
+    setTimeout(() => stapel.classList.add('stapel--bereit'), 1600);
+  };
   if (intro) {
     try { sessionStorage.setItem('lubrich-intro', '1'); } catch (e) { /* privater Modus */ }
     // Koordinaten zählen hoch
@@ -58,33 +63,79 @@
     requestAnimationFrame(planLos);
   }
 
-  /* ------------------------------------------------------------ Bauzeichnung: Motiv je Immobilienart */
-  const zeichnung = $('[data-plan]');
-  if (zeichnung) {
-    const svg = $('svg', zeichnung);
-    const knoepfe = $$('.plan__knoepfe button');
-    const zeige = (motiv) => {
-      knoepfe.forEach((k) => k.classList.toggle('ist-aktiv', k.dataset.motiv === motiv));
-      $$('.motiv', svg).forEach((g) => g.classList.toggle('ist-aktiv', g.dataset.motiv === motiv));
-    };
-    knoepfe.forEach((k) => {
-      k.addEventListener('pointerenter', () => zeige(k.dataset.motiv));
-      k.addEventListener('focus', () => zeige(k.dataset.motiv));
-    });
+  /* ------------------------------------------------------------ Giebelkarten-Stapel (Startseite) */
+  if (stapel) {
+    const karten = $$('.giebelkarte', stapel);
+    const nr = $('[data-nr]', stapel);
+    const ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let reihe = karten.slice();
+    let sperre = false;
 
-    // Messkreuz mit Maßangabe (Nullpunkt = linke Hauskante am Boden, 10,80 m = 340 Einheiten)
-    const kreuz = $('.messkreuz', svg), wert = $('.messkreuz__wert', svg);
-    const M = 340 / 10.8;
-    svg.addEventListener('pointermove', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      const ctm = svg.getScreenCTM(); if (!ctm) return;
-      const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm.inverse());
-      kreuz.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
-      const f = (v) => v.toFixed(2).replace('.', ',');
-      wert.textContent = `${f((pt.x - 150) / M)} m  |  ${f((480 - pt.y) / M)} m`;
-      zeichnung.classList.add('misst');
+    const ordnen = (liste = reihe) => {
+      liste.forEach((k, pos) => {
+        k.dataset.pos = String(Math.min(pos, 3));
+        const a = $('a', k);
+        if (pos === 0) a.removeAttribute('tabindex'); else a.setAttribute('tabindex', '-1');
+        k.setAttribute('aria-hidden', pos === 0 ? 'false' : 'true');
+      });
+      nr.textContent = String(karten.indexOf(reihe[0]) + 1);
+    };
+    const weiter = () => {
+      if (sperre || reihe.length < 2) return; sperre = true;
+      const oben = reihe.shift();
+      oben.classList.add('geht');
+      ordnen(reihe);
+      setTimeout(() => {
+        oben.classList.add('zieht'); oben.classList.remove('geht');
+        reihe.push(oben); ordnen();
+        oben.style.transform = '';
+        requestAnimationFrame(() => { oben.classList.remove('zieht'); sperre = false; });
+      }, ruhig ? 0 : 550);
+    };
+    const zurueck = () => {
+      if (sperre || reihe.length < 2) return;
+      reihe.unshift(reihe.pop()); ordnen();
+    };
+    $('[data-weiter]', stapel).addEventListener('click', () => { weiter(); pause(8000); });
+    $('[data-zurueck]', stapel).addEventListener('click', () => { zurueck(); pause(8000); });
+
+    // automatisch weiterblättern, pausiert bei Maus/Fokus und wenn nicht sichtbar
+    let pausiertBis = 0, sichtbar = true, drueber = false;
+    const pause = (ms) => { pausiertBis = Date.now() + ms; };
+    stapel.addEventListener('pointerenter', () => { drueber = true; });
+    stapel.addEventListener('pointerleave', () => { drueber = false; });
+    stapel.addEventListener('focusin', () => pause(10000));
+    new IntersectionObserver(([e]) => { sichtbar = e.isIntersecting; }).observe(stapel);
+    if (!ruhig) setInterval(() => {
+      if (stapel.classList.contains('stapel--bereit') && sichtbar && !drueber && Date.now() > pausiertBis && !document.hidden) weiter();
+    }, 4200);
+
+    // oberste Karte wegwischen
+    let start = null, dx = 0, gezogen = false;
+    stapel.addEventListener('pointerdown', (e) => {
+      const k = e.target.closest('.giebelkarte');
+      if (!k || k !== reihe[0] || sperre) return;
+      start = e.clientX; dx = 0; gezogen = false;
+      k.classList.add('zieht');
     });
-    svg.addEventListener('pointerleave', () => zeichnung.classList.remove('misst'));
+    window.addEventListener('pointermove', (e) => {
+      if (start === null) return;
+      dx = e.clientX - start;
+      if (Math.abs(dx) > 6) gezogen = true;
+      reihe[0].style.transform = `translateX(${dx}px) rotate(${dx / 18}deg)`;
+    });
+    window.addEventListener('pointerup', () => {
+      if (start === null) return;
+      const k = reihe[0];
+      start = null;
+      k.classList.remove('zieht');
+      k.style.transform = '';
+      if (Math.abs(dx) > 90) { weiter(); pause(8000); }
+    });
+    // nach dem Ziehen keinen Link öffnen
+    stapel.addEventListener('click', (e) => { if (gezogen && e.target.closest('.giebelkarte')) { e.preventDefault(); gezogen = false; } }, true);
+
+    ordnen();
   }
 
   /* ------------------------------------------------------------ Filter Immobilien */

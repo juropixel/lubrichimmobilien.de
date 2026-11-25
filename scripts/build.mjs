@@ -209,7 +209,6 @@ function objektKarte(o, r, { ueberschrift = 'h3' } = {}) {
   <a class="karte__link" href="${r}${objektPfad(o)}">
     <div class="karte__bild">${b ? `<img src="${r}${b.klein || b.datei}" alt="${esc(b.titel || o.titel)}" width="${b.w || 800}" height="${b.h || 600}" loading="lazy" decoding="async">` : '<span class="karte__ohnebild">Bilder auf Anfrage</span>'}
       <span class="karte__typ">${esc(typ)}</span>${o.status === 'reserviert' ? '<span class="karte__status">Reserviert</span>' : ''}</div>
-    ${o.flaechen?.wohnflaeche || o.flaechen?.grundstuecksflaeche ? `<span class="karte__mass" aria-hidden="true"><span>${o.flaechen?.wohnflaeche ? `${flaeche(o.flaechen.wohnflaeche)} Wohnfläche` : `${flaeche(o.flaechen.grundstuecksflaeche)} Grundstück`}</span></span>` : ''}
     <div class="karte__text">
       <p class="karte__ort">${icon.pin}${esc(o.adresse?.plz || '')} ${esc(o.adresse?.ort || '')}</p>
       <${H} class="karte__titel">${esc(o.titel)}</${H}>
@@ -225,6 +224,43 @@ function objektListe(r, liste = objekte, opts) {
     return `<div class="leer"><p>Gerade sind alle Objekte vermittelt. Neue Angebote kommen laufend hinzu – mit einem Suchauftrag erfahren Sie als Erste davon.</p><p><a class="knopf knopf--hell" href="${r}kontakt/#suche">Suchauftrag anlegen</a></p></div>`;
   }
   return `<div class="karten">${liste.map((o) => objektKarte(o, r, opts)).join('\n')}</div>`;
+}
+
+// Startseite: aktuelle Objekte als Stapel aus Karten in Giebelform
+function objektStapel(r) {
+  const gesehen = new Set();
+  const liste = objekte.filter((o) => {
+    if (!o.bilder?.length) return false;
+    // gleiche Objekte (doppelt angelegt) nur einmal zeigen
+    const k = [o.adresse?.ort, preisInfo(o).zahl, o.flaechen?.wohnflaeche].join('|');
+    if (gesehen.has(k)) return false;
+    gesehen.add(k); return true;
+  }).slice(0, 7);
+  if (!liste.length) return '';
+  const karten = liste.map((o, i) => {
+    const b = o.bilder[0];
+    const p = preisInfo(o);
+    const fakten = [o.zimmer ? `${zahl(o.zimmer)} Zimmer` : '', o.flaechen?.wohnflaeche ? flaeche(o.flaechen.wohnflaeche) : (o.flaechen?.grundstuecksflaeche ? `${flaeche(o.flaechen.grundstuecksflaeche)} Grundstück` : '')].filter(Boolean).join(', ');
+    return `<li class="giebelkarte" data-pos="${Math.min(i, 3)}" style="--n:${i}">
+      <a href="${r}${objektPfad(o)}" draggable="false"${i ? ' tabindex="-1"' : ''}>
+        <span class="giebelkarte__form"><img src="${r}${b.klein || b.datei}" alt="" width="${b.w}" height="${b.h}" draggable="false"${i > 2 ? ' loading="lazy"' : ''}></span>
+        <span class="giebelkarte__info">
+          <span class="giebelkarte__preis">${p.wert}${o.vermarktung === 'Miete' && p.zahl ? ' <small>Kaltmiete</small>' : ''}</span>
+          <span class="giebelkarte__titel">${esc(o.objektart)} in ${esc(o.adresse?.ort || '')}</span>
+          ${fakten ? `<span class="giebelkarte__fakten">${fakten}</span>` : ''}
+        </span>
+      </a>
+    </li>`;
+  }).join('\n');
+  return `<div class="stapel" data-stapel aria-roledescription="Karussell" aria-label="Aktuelle Angebote">
+    <ul class="stapel__karten">${karten}</ul>
+    <div class="stapel__steuerung">
+      <button type="button" class="stapel__knopf" data-zurueck aria-label="Vorheriges Angebot">‹</button>
+      <span class="stapel__zaehler" aria-live="polite"><span data-nr>1</span> von ${liste.length}</span>
+      <button type="button" class="stapel__knopf" data-weiter aria-label="Nächstes Angebot">›</button>
+      <a class="textlink" href="${r}immobilien/">Alle Angebote</a>
+    </div>
+  </div>`;
 }
 
 function bewertungStart(r) {
@@ -349,6 +385,7 @@ function bausteine(r, pfad) {
     telefonLink: F.telefonLink,
     email: F.email,
     'objekte:neueste': objektListe(r, objekte.slice(0, 3)),
+    'objekte:stapel': objektStapel(r),
     'objekte:anzahl': String(objekte.length),
     'objekte:anzahl-text': objekte.length === 1 ? 'ein Angebot' : `${objekte.length} Angebote`,
     'bewertung:start': bewertungStart(r),
