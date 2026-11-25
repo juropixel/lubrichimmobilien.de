@@ -19,6 +19,74 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('ist-offen')) { setze(false); menueKnopf.focus(); } });
   }
 
+  /* ------------------------------------------------------------ Intro (nur Startseite, einmal pro Besuch) */
+  const plan = $('.plan');
+  const intro = $('#intro');
+  const planLos = () => plan && plan.classList.add('plan--los');
+  if (intro) {
+    try { sessionStorage.setItem('lubrich-intro', '1'); } catch (e) { /* privater Modus */ }
+    // Koordinaten zählen hoch
+    $$('[data-zahl]', intro).forEach((el) => {
+      const ziel = Number(el.dataset.zahl), start = performance.now() + 1100, dauer = 1100;
+      const schritt = (t) => {
+        const f = Math.min(1, Math.max(0, (t - start) / dauer));
+        el.textContent = (ziel * (1 - Math.pow(1 - f, 3))).toFixed(3).replace('.', ',');
+        if (f < 1) requestAnimationFrame(schritt);
+      };
+      requestAnimationFrame(schritt);
+    });
+    let fertig = false;
+    const ende = () => {
+      if (fertig) return; fertig = true;
+      document.documentElement.classList.add('intro-fertig');
+      intro.hidden = true;
+      intro.parentNode && intro.parentNode.removeChild(intro);
+    };
+    // Die Zeichnung der Bühne startet, während sich der Giebel öffnet
+    const planTimer = setTimeout(planLos, 2700);
+    intro.addEventListener('animationend', (e) => { if (e.target === intro) ende(); });
+    const ueberspringen = () => {
+      if (intro.classList.contains('intro--sofort')) return;
+      clearTimeout(planTimer);
+      intro.classList.add('intro--sofort');
+      setTimeout(planLos, 250);
+    };
+    intro.addEventListener('click', ueberspringen);
+    document.addEventListener('keydown', ueberspringen, { once: true });
+    setTimeout(ende, 4600); // Sicherheitsnetz
+  } else {
+    requestAnimationFrame(planLos);
+  }
+
+  /* ------------------------------------------------------------ Bauzeichnung: Motiv je Immobilienart */
+  const zeichnung = $('[data-plan]');
+  if (zeichnung) {
+    const svg = $('svg', zeichnung);
+    const knoepfe = $$('.plan__knoepfe button');
+    const zeige = (motiv) => {
+      knoepfe.forEach((k) => k.classList.toggle('ist-aktiv', k.dataset.motiv === motiv));
+      $$('.motiv', svg).forEach((g) => g.classList.toggle('ist-aktiv', g.dataset.motiv === motiv));
+    };
+    knoepfe.forEach((k) => {
+      k.addEventListener('pointerenter', () => zeige(k.dataset.motiv));
+      k.addEventListener('focus', () => zeige(k.dataset.motiv));
+    });
+
+    // Messkreuz mit Maßangabe (Nullpunkt = linke Hauskante am Boden, 10,80 m = 340 Einheiten)
+    const kreuz = $('.messkreuz', svg), wert = $('.messkreuz__wert', svg);
+    const M = 340 / 10.8;
+    svg.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      const ctm = svg.getScreenCTM(); if (!ctm) return;
+      const pt = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm.inverse());
+      kreuz.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
+      const f = (v) => v.toFixed(2).replace('.', ',');
+      wert.textContent = `${f((pt.x - 150) / M)} m  |  ${f((480 - pt.y) / M)} m`;
+      zeichnung.classList.add('misst');
+    });
+    svg.addEventListener('pointerleave', () => zeichnung.classList.remove('misst'));
+  }
+
   /* ------------------------------------------------------------ Filter Immobilien */
   const filter = $('[data-filter]');
   if (filter) {

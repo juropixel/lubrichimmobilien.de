@@ -18,7 +18,7 @@
 <link rel="icon" href="assets/img/icon-lubrich.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/barlow-semi-condensed-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=8aaff49cb7">
+<link rel="stylesheet" href="assets/css/site.css?v=22f57698dc">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Lubrich Immobilien","url":"https://www.lubrichimmobilien.de/","telephone":"+491727570689","email":"info@lubrichimmobilien.de","image":"https://www.lubrichimmobilien.de/assets/img/og-lubrich-immobilien.png","address":{"@type":"PostalAddress","streetAddress":"Johann-Scholz-Straße 41","postalCode":"99438","addressLocality":"Bad Berka","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":50.8972,"longitude":11.2797},"areaServed":["Bad Berka","Weimar","Weimarer Land","Blankenhain","Kranichfeld","Grammetal","Klettbach","Magdala"],"founder":{"@type":"Person","name":"Franz Lubrich"},"sameAs":["https://www.instagram.com/immobilien.lubrich/","https://www.immowelt.de/profil/34121eb8bd34456195d85878fa707c93"]}</script>
 </head>
 <body class="start" data-root="" data-form-endpoint="" data-email="info@lubrichimmobilien.de">
@@ -37,33 +37,63 @@
   </div>
 </header>
 <main id="inhalt">
-<section class="buehne" aria-labelledby="buehne-titel">
-  <div class="rahmen buehne__raster">
-    <div class="buehne__text">
-      <h1 id="buehne-titel">Immobilienmakler in Bad Berka und im Weimarer Land</h1>
-      <p class="buehne__lead">Wir bewerten, verkaufen und vermieten Häuser, Wohnungen und Grundstücke. Sie haben einen festen Ansprechpartner – von der ersten Besichtigung bis zum Notartermin.</p>
-      <p class="buehne__kontakt">
-        <a href="tel:+491727570689"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6A16.6 16.6 0 0 1 3.4 5.2 1.6 1.6 0 0 1 5 3.5Z"/></svg>0172 7570689</a>
-        <a href="immobilien/">7 Angebote ansehen</a>
-      </p>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__mitte">
+    <svg class="intro__zeichnung" viewBox="-30 -20 175 150">
+      <path class="intro__hilf" d="M-30 0 H145 M-30 98.4 H145 M0 -20 V130 M114.4 -20 V130" pathLength="1"/>
+      <g transform="translate(48.081799,131.61115)"><path d="M -47.829315,-88.521862 C -28.867244,-101.30979 9.434077,-127.07543 9.434077,-127.07543 l 16.252976,11.71726 0.188989,14.17411 -17.1979166,-11.71727 -56.7599244,38.220346 z" pathLength="1" style="--i:0"/><path d="m 27.95491,-131.61115 14.741073,9.07143 -0.377976,7.74851 -14.174108,-9.4494 z" pathLength="1" style="--i:1"/><path d="m -21.559968,-88.332873 15.2188381,-10.123752 v 52.23933 H 20.4982 v 13.038921 h -42.07933 z" pathLength="1" style="--i:2"/><path d="m 28.1182,-33.178744 0.214302,-88.404176 13.964833,9.35443 0.214193,79.049746 z" pathLength="1" style="--i:3"/><path d="m 44.569124,-102.40633 21.733745,13.874065 0.04872,14.456505 -21.648832,-14.699824 z" pathLength="1" style="--i:4"/></g>
+      <path class="intro__mass" d="M0 116 H114.4 M0 110 V122 M114.4 110 V122" pathLength="1"/>
+      <path class="intro__mass" d="M-16 0 V98.4 M-22 0 H-10 M-22 98.4 H-10" pathLength="1"/>
+    </svg>
+    <p class="intro__name"><span>Lubrich Immobilien</span></p>
+    <p class="intro__koord"><span data-zahl="50.897">0,000</span>° N <span data-zahl="11.280">0,000</span>° O</p>
+  </div>
+</div>
+<script>try{if(sessionStorage.getItem('lubrich-intro')||matchMedia('(prefers-reduced-motion: reduce)').matches){document.getElementById('intro').remove()}else{document.documentElement.classList.add('mit-intro')}}catch(e){document.getElementById('intro').remove()}</script>
+<section class="plan" aria-labelledby="buehne-titel">
+  <div class="rahmen plan__raster">
+    <div class="plan__text">
+      <h1 id="buehne-titel">Wir wissen, was Ihr Haus wert ist.</h1>
+      <p class="plan__lead">Immobilienmakler in Bad Berka – für Weimar und das Weimarer Land. Wir bewerten, verkaufen und vermieten. Mit einem Ansprechpartner vom ersten Aufmaß bis zum Notartermin.</p>
+      <form class="plan__wahl" action="immobilienbewertung/" method="get">
+        <p id="wahl-frage">Was möchten Sie bewerten lassen?</p>
+        <div class="plan__knoepfe" role="group" aria-labelledby="wahl-frage">
+          <button type="submit" name="art" value="haus" data-motiv="haus" class="ist-aktiv">Haus</button>
+          <button type="submit" name="art" value="wohnung" data-motiv="wohnung">Wohnung</button>
+          <button type="submit" name="art" value="grundstueck" data-motiv="grundstueck">Grundstück</button>
+          <button type="submit" name="art" value="gewerbe" data-motiv="gewerbe">Gewerbe</button>
+        </div>
+        <p class="plan__hinweis">Kostenlos, unverbindlich, in etwa zwei Minuten.</p>
+      </form>
     </div>
-    <div class="buehne__karte">
-      <svg class="buehne__dach" viewBox="0 0 600 130" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M6 128 L282 14" />
-        <path d="M330 0 V14 M330 30 V128" />
-        <path d="M368 46 L594 128" />
+    <div class="plan__zeichnung" data-plan>
+      <svg class="plan__svg" viewBox="0 0 640 560" role="img" aria-label="Technische Zeichnung der gewählten Immobilienart">
+        <defs>
+          <clipPath id="giebel"><polygon points="150,480 150,296 320,152 490,296 490,480"/></clipPath>
+          <filter id="duoton" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values=".33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 1 0"/>
+            <feComponentTransfer><feFuncR type="table" tableValues="0.03 0.78"/><feFuncG type="table" tableValues="0.14 0.88"/><feFuncB type="table" tableValues="0.27 0.97"/></feComponentTransfer>
+          </filter>
+        </defs>
+        <g class="motiv ist-aktiv" data-motiv="haus">
+          <image class="plan__foto" href="bilder/immobilien/269/10.webp" x="100" y="140" width="440" height="345" preserveAspectRatio="xMidYMid slice" clip-path="url(#giebel)" filter="url(#duoton)"/>
+          <path class="boden" d="M20 480 H620" pathLength="1" style="--i:0"/><path d="M150 480 V298" pathLength="1" style="--i:1"/><path d="M490 480 V298" pathLength="1" style="--i:1"/><path class="dach" d="M110 332 L300 170" pathLength="1" style="--i:2"/><path class="dach dach--kamin" d="M340 116 V136 M340 164 V298" pathLength="1" style="--i:3"/><path class="dach" d="M372 196 L530 332" pathLength="1" style="--i:2"/><path d="M300 480 V398 H350 V480" pathLength="1" style="--i:4"/><path d="M190 356 H250 V408 H190 Z M220 356 V408" pathLength="1" style="--i:5"/><path d="M400 356 H460 V408 H400 Z M430 356 V408" pathLength="1" style="--i:5"/><path class="mass" d="M150 516 H490 M150 504 V528 M490 504 V528" pathLength="1" style="--i:6"/><path class="mass" d="M100 480 V298 M88 480 H112 M88 298 H112" pathLength="1" style="--i:6"/><path class="hilfs" d="M150 298 H490" pathLength="1" style="--i:7"/><path class="hilfs" d="M320 152 V480" pathLength="1" style="--i:7"/><text x="320" y="546" style="--i:8">10,80 m</text><text x="78" y="394" style="--i:8" transform="rotate(-90 78 394)">3,20 m</text><text x="214" y="250" style="--i:8">38°</text><text x="352" y="110" style="--i:9">First 7,60 m</text>
+        </g>
+        <g class="motiv" data-motiv="grundstueck"><path class="boden" d="M20 480 H620" pathLength="1" style="--i:0"/><path d="M120 440 L200 210 L520 236 L566 452 Z" pathLength="1" style="--i:1"/><path class="hilfs" d="M200 210 L248 446 M360 222 L380 448" pathLength="1" style="--i:2"/><path d="M262 300 m-24 0 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0" pathLength="1" style="--i:3"/><path d="M310 344 m-16 0 a16 16 0 1 0 32 0 a16 16 0 1 0 -32 0" pathLength="1" style="--i:3"/><path d="M470 300 m-30 0 a30 30 0 1 0 60 0 a30 30 0 1 0 -60 0" pathLength="1" style="--i:3"/><path class="mass" d="M120 470 L566 482 M120 458 V482 M566 470 V494" pathLength="1" style="--i:5"/><path class="mass" d="M586 150 V100 M586 100 L576 120 M586 100 L596 120" pathLength="1" style="--i:6"/><text x="343" y="512" style="--i:7">38,50 m</text><text x="586" y="172" style="--i:7">N</text><text x="360" y="380" style="--i:8" class="gross">615 m²</text></g>
+        <g class="motiv" data-motiv="wohnung"><path class="boden" d="M20 480 H620" pathLength="1" style="--i:0"/><path d="M180 480 V160 H460 V480" pathLength="1" style="--i:1"/><path class="dach" d="M170 160 H470" pathLength="1" style="--i:1"/><path class="hilfs" d="M180 240 H460 M180 320 H460 M180 400 H460" pathLength="1" style="--i:2"/><path d="M214 186 h36 v40 h-36 Z" pathLength="1" style="--i:4"/><path d="M302 186 h36 v40 h-36 Z" pathLength="1" style="--i:4"/><path d="M390 186 h36 v40 h-36 Z" pathLength="1" style="--i:4"/><path d="M214 266 h36 v40 h-36 Z" pathLength="1" style="--i:5"/><path d="M302 266 h36 v40 h-36 Z" pathLength="1" style="--i:5"/><path d="M390 266 h36 v40 h-36 Z" pathLength="1" style="--i:5"/><path d="M214 346 h36 v40 h-36 Z" pathLength="1" style="--i:6"/><path d="M302 346 h36 v40 h-36 Z" pathLength="1" style="--i:6"/><path d="M390 346 h36 v40 h-36 Z" pathLength="1" style="--i:6"/><path class="akzent" d="M302 266 h36 v40 h-36 Z" pathLength="1" style="--i:8"/><path d="M296 426 h48 v54 M296 426 V480" pathLength="1" style="--i:7"/><path class="mass" d="M500 480 V160 M488 480 H512 M488 160 H512" pathLength="1" style="--i:8"/><text x="520" y="326" style="--i:9" transform="rotate(-90 520 326)">12,40 m</text><text x="150" y="292" style="--i:9" class="akzent-text links">2. OG</text></g>
+        <g class="motiv" data-motiv="gewerbe"><path class="boden" d="M20 480 H620" pathLength="1" style="--i:0"/><path class="dach" d="M90 480 V282 L170 222 V282 L250 222 V282 L330 222 V282 L410 222 V282 L490 222 V282 L550 282 V480" pathLength="1" style="--i:1"/><path class="hilfs" d="M90 282 H550" pathLength="1" style="--i:2"/><path d="M200 480 V380 H330 V480 M200 400 H330 M200 420 H330 M200 440 H330 M200 460 H330" pathLength="1" style="--i:3"/><path d="M380 330 H500 V370 H380 Z" pathLength="1" style="--i:4"/><path d="M120 330 H170 V370 H120 Z" pathLength="1" style="--i:4"/><path class="mass" d="M90 516 H550 M90 504 V528 M550 504 V528" pathLength="1" style="--i:5"/><text x="320" y="546" style="--i:6">46,00 m</text><text x="265" y="355" style="--i:7" class="gross">1.200 m²</text></g>
+        <g class="messkreuz" aria-hidden="true"><path d="M-2000 0 H2000 M0 -2000 V2000"/><circle r="5"/><text class="messkreuz__wert" x="12" y="-12"></text></g>
       </svg>
-      <h2>Was ist Ihre Immobilie wert?</h2>
-      <form class="schnellwahl" action="immobilienbewertung/" method="get">
-  <fieldset>
-    <legend>Welche Immobilie möchten Sie bewerten lassen?</legend>
-    <div class="schnellwahl__optionen">
-      <button class="wahl" type="submit" name="art" value="grundstueck"><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M6 40 20 14h30l8 26Z"/><path d="M20 14l-3 26M33 14v26M46 14l3 26M9 32h50M14 22h41"/></svg><span>Grundstück</span></button><button class="wahl" type="submit" name="art" value="haus"><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M8 24 32 6l24 18"/><path d="M14 20v22h36V20"/><path d="M27 42V30h10v12"/><path d="M43 12V6h5v10"/></svg><span>Haus</span></button><button class="wahl" type="submit" name="art" value="wohnung"><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M16 42V6h32v36"/><path d="M10 42h44"/><path d="M23 12h6v5h-6zM35 12h6v5h-6zM23 22h6v5h-6zM35 22h6v5h-6zM29 42v-8h6v8"/></svg><span>Wohnung</span></button><button class="wahl" type="submit" name="art" value="gewerbe"><svg viewBox="0 0 64 48" aria-hidden="true"><path d="M6 42V22l12-7v7l12-7v7l12-7V8h8v34Z"/><path d="M4 42h56M14 32h6M26 32h6M38 32h6"/></svg><span>Gewerbe</span></button>
     </div>
-  </fieldset>
-  <p class="schnellwahl__hinweis">Kostenlos und unverbindlich. Dauert etwa zwei Minuten.</p>
-</form>
-    </div>
+  </div>
+  <div class="rahmen">
+    <dl class="schriftfeld">
+      <div class="schriftfeld__gross"><dt>Bauherr</dt><dd>Lubrich Immobilien</dd></div>
+      <div><dt>Bearbeiter</dt><dd>Franz Lubrich</dd></div>
+      <div><dt>Telefon</dt><dd><a href="tel:+491727570689">0172 7570689</a></dd></div>
+      <div><dt>Standort</dt><dd>Bad Berka, 50,897° N 11,280° O</dd></div>
+      <div><dt>Blatt</dt><dd><a href="immobilien/">7 Angebote</a></dd></div>
+    </dl>
   </div>
 </section>
 
@@ -259,6 +289,6 @@
   <a href="immobilienbewertung/"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 20h16M12 4v16M5 8h14M5 8l-2.5 6h5L5 8Zm14 0-2.5 6h5L19 8Z"/></svg><span>Bewerten</span></a>
   <a href="mailto:info@lubrichimmobilien.de"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3.5 5.5h17v13h-17zM3.5 6l8.5 7 8.5-7"/></svg><span>E-Mail</span></a>
 </nav>
-<script src="assets/js/site.js?v=8aaff49cb7" defer></script>
+<script src="assets/js/site.js?v=22f57698dc" defer></script>
 </body>
 </html>
